@@ -1,0 +1,236 @@
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f5dd53;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #f5dd53;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8;
+}
+
+.profile-button {
+    background: #BA68C8;
+    box-shadow: none;
+    border: none;
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none;
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none;
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer;
+}
+
+
+
+/*LOGIN STYLE*/
+
+
+body{
+
+    background-color: #2f3031;
+
+}
+
+.card {
+    border-radius: 30px;
+    border-top: 5px solid rgb(245, 221, 83);
+    background:  #191919;
+    color: #57557A;
+    width: 300px;
+}
+
+p {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.fab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: #2A284D;
+    height: 40px;
+    width: 90px;
+}
+
+
+
+.division {
+    float: none;
+    position: relative;
+    margin: 30px auto 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.division .line {
+    border-top: 1.5px solid #57557A;
+    ;
+    position: absolute;
+    top: 13px;
+    width: 85%;
+}
+
+
+.division span {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.myform {
+    padding: 0 25px 0 33px;
+}
+
+.form-control {
+    border: 0;
+    background-color: #0a0a0a;
+    background: #0a0a0a;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #f5dd53;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+
+.form-control:focus {
+    width: 270px;
+    border-color: #fafffc;
+    background-color: #0a0a0a;
+    color:white;
+    
+
+}
+
+.bn {
+    text-decoration: underline;
+}
+
+.bn:hover {
+    cursor: pointer;
+}
+
+.form-check-input {
+    margin-top: 8px !important;
+}
+
+.btn-block {
+    border: 0;
+    background-color: #0a0a0a;
+    background: #0a0a0a;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    width: 150px;
+    margin: 25px 65px;
+    
+   
+}
+
+.btn-block:hover{
+
+    background: #2ecc71;
+    
+}
+.btn-block i{
+
+    color: white;
+    text-align: center;
+    
+}
+
+
+small {
+    color: #403b42
+}
+
+
+@media(min-width: 767px) {
+    .bn {
+        text-align: right;
+    }
+}
+
+@media(max-width: 767px) {
+    .form-check {
+        text-align: center;
+    }
+
+    .bn {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media(max-width: 450px) {
+    .fab {
+        width: 100%;
+        height: 100%;
+    }
+
+    .division .line {
+        width: 50%;
+    }
+}
+/*SIGN UP STYLE*/
+
+#mydiv{
+
+    width: 100%;
+    background-color: #c5c0c0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+
+}
+
+
