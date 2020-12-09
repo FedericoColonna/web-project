@@ -60,7 +60,7 @@
 
 function emptySignup($firstname, $lastname, $email, $password, $confirm){
 
-    //$result;
+    
     if(empty($email) || empty($password) || empty($firstname) || empty($lastname) || empty($confirm)){
 
       $result = true;
