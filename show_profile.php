@@ -21,18 +21,16 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 
 include_once 'back_end/db-connection.php';
 $user_email = $_SESSION['email'];
-$sql = "SELECT* FROM users WHERE email = $user_email;";
-$result = mysqli_query($conn, $sql);
-$resultCheck = mysqli_num_rows($result);
+echo $user_email;
 
-if($resultCheck > 0){
+if ($stmt = mysqli_prepare($conn, "SELECT first_name, last_name FROM user WHERE email = ?")) {
+    mysqli_stmt_bind_param($stmt, "s", $user_email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $first_name, $last_name);
+    mysqli_stmt_fetch($stmt);
 
-    $row = mysqli_fetch_assoc($result);
-
-    echo $row;
-
-
-
+    echo $first_name;
+    echo $last_name;
 }
 
 
@@ -55,8 +53,8 @@ if($resultCheck > 0){
                     <h6 class="text-right">Edit your profile:</h6>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><input type="text" class="form-control" placeholder="first name" value="John"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" value="Doe" placeholder="last name"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" placeholder="first name" value="<?php echo htmlspecialchars($first_name); ?>"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" value="<?php echo htmlspecialchars($last_name); ?>" placeholder="last name"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="john_doe12@bbb.com"></div>
