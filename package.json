@@ -1,0 +1,22 @@
+{
+  "name": "webproject",
+  "version": "1.0.0",
+  "description": "Web project for SAW",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FedericoColonna/web-project.git"
+  },
+  "author": "federico.colonna89@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FedericoColonna/web-project/issues"
+  },
+  "homepage": "https://github.com/FedericoColonna/web-project#readme",
+  "dependencies": {
+    "bootswatch": "^4.5.3"
+  }
+}
