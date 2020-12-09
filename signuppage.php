@@ -22,31 +22,33 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <div id= "mydiv" class="container">
     <div class="input-group">
         <div class="row">
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <h1>Create your account:</h1>
+            </div>
             <div class="col-sm-4">
                 <form id="myform" action="/back_end/registration.php" method="POST">
                     <div class="form-group">
-                        <label for="firstname">First name:</label><br>
+                        <label class="label" for="firstname">First name:</label><br>
                         <input class="form-control"type="text" id="firstname" name="firstname"><br>
                     </div>  
                     <div class="form-group">
-                        <label for="lastname">Last name:</label><br>
+                        <label class="label" for="lastname">Last name:</label><br>
                         <input class="form-control" type="text" id="lastname" name="lastname"><br>
                     </div>    
                     <div class="form-group">    
-                        <label for="email">Email:</label><br>
+                        <label class="label" for="email">Email:</label><br>
                         <input class="form-control" type="email" id="email" name="email"><br>
                     </div>    
                     <div class="form-group">  
-                        <label for="pass">Password:</label><br>
+                        <label class="label" for="pass">Password:</label><br>
                         <input class="form-control" type="password" id="pass" name="pass"><br>
                     </div>
                     <div class="form-group">  
-                        <label for="password">Confirm Password:</label><br>
+                        <label class="label" for="password">Confirm Password:</label><br>
                         <input class="form-control" type="password" id="confirm" name="confirm"><br><br>
                     </div>
                     <div class="form-group">      
-                        <input type="submit" class="btn btn-sm" value="Submit" name="submit">
+                        <input type="submit" class="btn btn-success" value="Submit" name="submit">
                     </div>
                 </form>    
             </div>

@@ -121,30 +121,56 @@ p {
 }
 
 .form-control {
-    border: 0;
-    background-color: #0a0a0a;
-    background: #0a0a0a;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #f5dd53;
-    padding: 10px 10px;
-    width: 250px;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s
-}
 
-
-.form-control:focus {
-    width: 270px;
-    border-color: #fafffc;
-    background-color: #0a0a0a;
-    color:white;
+    color: black;
+    background-color: rgb(90, 117, 134);
+    width: auto;
     
+} 
+.loginfield{
+    position: relative;
+    display: block;
+    margin : 0 auto;
+    color: black;
+    background-color: rgb(90, 117, 134);
+    width: auto;
+    border-radius: 10px;
+    
+    
+}
+.form-control:focus {
+    background-color: rgb(90, 117, 134);
+    color:white;
+    font-weight: bold;
+    border-color: rgb(245, 221, 83);
+    border-bottom: 5px solid rgb(245, 221, 83);
+}
+
+.loginfield:focus{
+
+    background-color: rgb(90, 117, 134);
+    color:white;
+    font-weight: bold;
+    border-color: rgb(245, 221, 83);
+    border-bottom: 5px solid rgb(245, 221, 83);
+   
 
 }
+::-webkit-input-placeholder { /* Edge */
+    color:white;
+    font-weight: bold;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+    font-weight: bold;
+  }
+  
+  ::placeholder {
+    color: white;
+    font-weight: bold;
+  }
+
 
 .bn {
     text-decoration: underline;
@@ -154,12 +180,10 @@ p {
     cursor: pointer;
 }
 
-.form-check-input {
-    margin-top: 8px !important;
-}
 
 .btn-block {
     border: 0;
+    color: white;
     background-color: #0a0a0a;
     background: #0a0a0a;
     display: block;
@@ -181,12 +205,7 @@ p {
     background: #2ecc71;
     
 }
-.btn-block i{
 
-    color: white;
-    text-align: center;
-    
-}
 
 
 small {
@@ -224,13 +243,24 @@ small {
 /*SIGN UP STYLE*/
 
 #mydiv{
-
-    width: 100%;
-    background-color: #c5c0c0;
+    margin-top: 40px;
+    width: 700px;
+    background-color: #191919;
     padding-top: 60px;
     padding-bottom: 60px;
 
+}
+#mydiv h1{
+
+    color:  rgb(245, 221, 83);
 
 }
 
+.label{
+
+    color: white;
+
+
+
+}
 

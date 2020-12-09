@@ -31,13 +31,13 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                     </div>
                 </div>
                 <form action="/back_end/login.php" method="POST">
-                    <div class="form-group"> <input type="email" id="email" name="email" class="form-control" placeholder="Email"> </div>
-                    <div class="form-group"> <input type="password" class="form-control" id="pass" name="pass" placeholder="Password"> </div>
+                    <div> <input class="loginfield" type="email" id="email" name="email" placeholder="Email"> </div>
+                    <div> <input class="loginfield" type="password" id="pass" name="pass" placeholder="Password"> </div>
                     <div class="row">
                         <div class="col-md-6 col-12">
-                            <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="exampleCheck1"> <label class="form-check-label" for="exampleCheck1">Keep me logged in</label> </div>
+                            
                         </div>
-                        <div class="col-md-6 col-12 bn">link</div>
+                    
                     </div>
                     <div class="form-group mt-3">
                         <button type="submit" name="login" class="btn btn-block btn-lg"><i>Login</i></button>
