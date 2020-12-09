@@ -27,34 +27,38 @@
   color: white;
 }
 
-.form-control:focus {
-    box-shadow: none;
-    border-color: #BA68C8;
-}
+
 
 .profile-button {
-    background: #BA68C8;
+    background: rgb(245, 221, 83);
     box-shadow: none;
     border: none;
+    color:black;
 }
 
 .profile-button:hover {
-    background: #682773
+    background: rgb(206, 175, 4);
 }
 
 .profile-button:focus {
-    background: #682773;
+    background: rgb(245, 221, 83);
     box-shadow: none;
 }
 
 .profile-button:active {
-    background: #682773;
+    background:rgb(245, 221, 83);
     box-shadow: none;
 }
 
 .back:hover {
-    color: #682773;
+    color: rgb(245, 221, 83);
     cursor: pointer;
+}
+.text-right{
+
+    font-weight:bold;
+    color: rgb(245, 221, 83);
+
 }
 
 
@@ -104,7 +108,7 @@ p {
 
 .division .line {
     border-top: 1.5px solid #57557A;
-    ;
+    
     position: absolute;
     top: 13px;
     width: 85%;
@@ -127,6 +131,9 @@ p {
     width: auto;
     
 } 
+.form-control::placeholder{
+    color: rgb(189, 181, 181);
+  }
 .loginfield{
     position: relative;
     display: block;
@@ -260,7 +267,11 @@ small {
 
     color: white;
 
+}
+.profilediv{
 
+    background-color: #191919;
+    color: white;
 
 }
 

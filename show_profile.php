@@ -16,13 +16,14 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 </head>
 <?php $currentPage = 'Profile'; ?>
 <?php include'commons/navbar.php';?>
-
+<?php include_once 'db-connection.php';?> 
 </head>
 <body>
-<div class="container rounded bg-white mt-5">
+
+<div class="container rounded profilediv mt-5">
     <div class="row">
         <div class="col-md-4 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">John Doe</span><span>john_doe12@bbb.com</span><span>United States</span></div>
         </div>
         <div class="col-md-8">
             <div class="p-3 py-5">
@@ -30,11 +31,11 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                     <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
                         <h6>Back to home</h6>
                     </div>
-                    <h6 class="text-right">Edit Profile</h6>
+                    <h6 class="text-right">Edit your profile:</h6>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="first name" value="John"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" value="Doe" placeholder="Doe"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" value="Doe" placeholder="last name"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="john_doe12@bbb.com"></div>
@@ -53,11 +54,6 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
         </div>
     </div>
 </div>
-
-
-
-
-
 
 </body>
 </html>
