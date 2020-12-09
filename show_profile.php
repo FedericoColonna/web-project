@@ -16,7 +16,28 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 </head>
 <?php $currentPage = 'Profile'; ?>
 <?php include'commons/navbar.php';?>
-<?php include_once 'db-connection.php';?> 
+
+<?php 
+
+include_once 'back_end/db-connection.php';
+$user_email = $_SESSION['email'];
+$sql = "SELECT* FROM users WHERE email = $user_email;";
+$result = mysqli_query($conn, $sql);
+$resultCheck = mysqli_num_rows($result);
+
+if($resultCheck > 0){
+
+    $row = mysqli_fetch_assoc($result);
+
+    echo $row;
+
+
+
+}
+
+
+
+?>
 </head>
 <body>
 
