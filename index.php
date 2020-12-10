@@ -15,6 +15,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 
 <?php $currentPage = 'Home'; ?>
 <?php include'commons/navbar.php';?> 
+ 
 
 </head>
 <body>

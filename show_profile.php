@@ -31,6 +31,8 @@ if ($stmt = mysqli_prepare($conn, "SELECT first_name, last_name FROM user WHERE 
 
     echo $first_name;
     echo $last_name;
+    $country = "Country";
+    $zipcode;
 }
 
 
@@ -57,12 +59,12 @@ if ($stmt = mysqli_prepare($conn, "SELECT first_name, last_name FROM user WHERE 
                     <div class="col-md-6"><input type="text" class="form-control" value="<?php echo htmlspecialchars($last_name); ?>" placeholder="last name"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="john_doe12@bbb.com"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="<?php echo htmlspecialchars($user_email); ?>"></div>
                     <div class="col-md-6"><input type="text" class="form-control" value="+19685969668" placeholder="Phone number"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="D-113, right avenue block, CA,USA"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" value="USA" placeholder="Country"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" value="<?php echo htmlspecialchars($country); ?>" placeholder="Country"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="Bank Name" value="Bank of America"></div>
