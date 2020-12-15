@@ -39,7 +39,7 @@
         }
         session_start();
         $_SESSION["userid"] = $user["id"];
-        $_SESSION["email"] = $user["email"];
+        $_SESSION["email"] = $email;
     
         header("Location: ../index.php");
         exit();

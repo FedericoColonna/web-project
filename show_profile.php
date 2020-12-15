@@ -18,9 +18,8 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <?php include'commons/navbar.php';?>
 
 <?php 
-    require_once 'back_end/db-connection.php';
+    require_once 'back_end/db-user.php';
     $email = $_SESSION['email'];
-
     $user = getUser($email);
 ?>
 </head>
