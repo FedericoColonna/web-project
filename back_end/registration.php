@@ -1,5 +1,5 @@
 <?php
-    echo '<script>console.log("here")</script>';
+    
       if(isset($_POST['submit']))
       {
          require_once 'db-connection.php';
