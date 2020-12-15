@@ -18,25 +18,10 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <?php include'commons/navbar.php';?>
 
 <?php 
+    require_once 'back_end/db-connection.php';
+    $email = $_SESSION['email'];
 
-include_once 'back_end/db-connection.php';
-$email = $_SESSION['email'];
-echo $email;
-
-if ($stmt = mysqli_prepare($conn, "SELECT first_name, last_name FROM user WHERE email = ?")) {
-    mysqli_stmt_bind_param($stmt, "s", $email);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_bind_result($stmt, $first_name, $last_name);
-    mysqli_stmt_fetch($stmt);
-
-    echo $first_name;
-    echo $last_name;
-    $country = "Country";
-    $zipcode;
-}
-
-
-
+    $user = getUser($email);
 ?>
 </head>
 <body>
@@ -56,8 +41,8 @@ if ($stmt = mysqli_prepare($conn, "SELECT first_name, last_name FROM user WHERE 
                     <h6 class="text-right">Edit your profile:</h6>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><input type="text" name="firstname" class="form-control" placeholder="first name" value="<?php echo htmlspecialchars($first_name); ?>"></div>
-                    <div class="col-md-6"><input type="text" name="lastname" class="form-control" value="<?php echo htmlspecialchars($last_name); ?>" placeholder="last name"></div>
+                    <div class="col-md-6"><input type="text" name="firstname" class="form-control" placeholder="first name" value="<?php echo htmlspecialchars($user["first_name"]); ?>"></div>
+                    <div class="col-md-6"><input type="text" name="lastname" class="form-control" value="<?php echo htmlspecialchars($user["last_name"]); ?>" placeholder="last name"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo htmlspecialchars($email); ?>"></div>
