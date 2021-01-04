@@ -19,8 +19,23 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 
 <?php 
     require_once 'back_end/db-user.php';
+    require_once 'back_end/db-pizza.php';
+    require_once 'back_end/db-topping.php';
     $email = $_SESSION['email'];
     $user = getUser($email);
+    $pizza_ids = [1, 2];
+    $pizzas = getPizzas($pizza_ids);
+
+    foreach ($pizzas as $pizza) {
+        echo $pizza["id"].'<br>';
+        echo $pizza["name"].'<br>';
+        echo $pizza["price"].'<br>';
+        echo '<br>';
+    }
+
+    $topping = getTopping('pomodoro');
+    echo $topping["name"];
+    echo $topping["custom_additional_price"];
 ?>
 </head>
 <body>
