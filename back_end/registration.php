@@ -77,7 +77,7 @@
     }
     function passwordMatch($password, $password_to_check) {
         if($password !== $password_to_check) {
-            return false;
+            return true;
         }
         return false;
     }
