@@ -7,6 +7,8 @@
         $email= trim($_POST['email']);
         $password = trim($_POST['pass']);
         $confirm= trim($_POST['confirm']);
+        $country= trim($_POST['country']);
+        
     
         if (emptySignup($firstname, $lastname, $email, $password, $confirm) !== false) {
             header("Location: ../signuppage.php?error=emptyinput");
@@ -17,6 +19,9 @@
         } if (containsOnlyLetter($lastname) !== false) {
             header("Location: ../signuppage.php?error=invalidlastname");
             exit();
+        } if (containsOnlyLetter($country) !== false) {
+            header("Location: ../signuppage.php?error=invalidCountry");
+            exit();
         } if (invalidEmail($email) !== false) {
             header("Location: ../signuppage.php?error=invalidemail");
             exit();
@@ -26,12 +31,15 @@
         } if (emailExists($email) !== false) {
             header("Location: ../signuppage.php?error=stmtfailed");
             exit();
+        } if(emptyOptionalField($country)) {
+            $country = "country";
         }
+
     }
     else {
         header("Location: ../signuppage.php");
     }
-    if (createUser($email, password_hash($password, PASSWORD_DEFAULT), $firstname, $lastname) == -1) {
+    if (createUser($email, password_hash($password, PASSWORD_DEFAULT), $firstname, $lastname, $country) == -1) {
         header("Location: ../signuppage.php?error=stmtfailed");
     } else {
         header("Location: ../signuppage.php?error=none");
@@ -43,6 +51,12 @@
         }
         else {
             $result = false;
+        }
+        return $result;
+    }
+    function emptyOptionalField($country) {
+        if(empty($country)){
+            $result = true;
         }
         return $result;
     }

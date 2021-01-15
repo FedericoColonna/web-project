@@ -19,13 +19,36 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <link rel="stylesheet" type="text/css" href="signupstyle.css">
 <?php $currentPage = 'Reserved'; ?>
 <?php include'commons/navbar.php'; ?>
-<?php 
+
+<?php
+require_once 'back_end/db-pizza.php';
+require_once 'back_end/db-topping.php';
+
     if(isset($_SESSION['userid'])){
         echo "Welcome to the restricted area";
     }
     else{
         header("location: loginpage.php");
     }
+
+    $pizza_ids = [1, 2];
+    $pizzas = getPizzas($pizza_ids);
+
+    foreach ($pizzas as $pizza) {
+        echo $pizza["id"].'<br>';
+        echo $pizza["name"].'<br>';
+        echo $pizza["price"].'<br>';
+        echo '<br>';
+    }
+
+    $topping = getTopping('pomodoro');
+    echo $topping["name"];
+    echo $topping["custom_additional_price"];
+
+    
+
+
+
 ?>
 
 </body>

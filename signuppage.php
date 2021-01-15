@@ -47,6 +47,10 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                         <label class="label" for="password">Confirm Password:</label><br>
                         <input class="form-control" type="password" id="confirm" name="confirm"><br><br>
                     </div>
+                    <div class="form-group">
+                        <label class="label" for="country">Country (optional):</label><br>
+                        <input class="form-control" type="text" id="country" name="country"><br>
+                    </div>    
                     <div class="form-group">      
                         <input type="submit" class="btn btn-success" value="Submit" name="submit">
                     </div>
@@ -61,7 +65,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     if (isset($_GET["error"])) {
 
         if($_GET["error"] == "emptyinput"){
-            echo "<p>Fill in all fields!</p>";
+            echo "<p>Fill in all required fields!</p>";
         }
         else if ($_GET["error"] == "invalidfirstname") {
             echo "<p>Use only letters for your first name!</p>";

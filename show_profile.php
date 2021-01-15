@@ -23,19 +23,10 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     require_once 'back_end/db-topping.php';
     $email = $_SESSION['email'];
     $user = getUser($email);
-    $pizza_ids = [1, 2];
-    $pizzas = getPizzas($pizza_ids);
+    //$user['country']= "country";
+    print_r($user);
 
-    foreach ($pizzas as $pizza) {
-        echo $pizza["id"].'<br>';
-        echo $pizza["name"].'<br>';
-        echo $pizza["price"].'<br>';
-        echo '<br>';
-    }
-
-    $topping = getTopping('pomodoro');
-    echo $topping["name"];
-    echo $topping["custom_additional_price"];
+    
 ?>
 </head>
 <body>
@@ -59,12 +50,12 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                     <div class="col-md-6"><input type="text" name="lastname" class="form-control" value="<?php echo htmlspecialchars($user["last_name"]); ?>" placeholder="last name"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo htmlspecialchars($email); ?>"></div>
+                    <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo htmlspecialchars($user["email"]); ?>"></div>
                     <div class="col-md-6"><input type="text" class="form-control" value="+19685969668" placeholder="Phone number"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="D-113, right avenue block, CA,USA"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" value="<?php echo htmlspecialchars($country); ?>" placeholder="Country"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" value="<?php echo htmlspecialchars($user["country"]); ?>" placeholder="country"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="Bank Name" value="Bank of America"></div>
