@@ -1,14 +1,13 @@
 <?php 
-    session_start();
+    
     require_once 'db-connection.php';
     require_once 'db-user.php';
     if (isset($_POST['passwordchange'])) {
 
-        $user_email = $_SESSION['email'];
-        echo $user_email;
-        $old_password = $_POST['old'];
-        $new_password = $_POST['new'];
-        $confirm_new_password = $_POST['confirmnew'];
+        $user_email= trim($_POST['email2']);
+        $old_password = trim($_POST['old']);
+        $new_password = trim($_POST['new']);
+        $confirm_new_password = trim($_POST['confirmnew']);
 
         $user = getUser($user_email);
         $user_id = $user['id'];
@@ -52,5 +51,5 @@
         if($password !== $password_to_check) {
             return false;
         }
-        return false;
-    }
+        return false; 
+    } 

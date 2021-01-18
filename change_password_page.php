@@ -13,6 +13,11 @@
  crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<?php $currentPage = 'ChangePassword'; ?>
+<?php include'commons/navbar.php';?>
+<?php
+    $user_email = $_SESSION['email'];
+    echo $user_email; ?>
 
 </head>
 <body>
@@ -30,8 +35,11 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
   <div class="row">
 	 <div class="col-md-4 mx-auto">
 		<div class="myform form ">
-		   <form action="/back_end/change_password.php" method="POST" name="passwordchange">
+		   <form action="/back_end/change_password.php" method="POST">
 			  <div class="form-group">
+				 <input readonly="readonly" type="email" name="email2"  class="form-control my-input" id="email2" placeholder="Email" value="<?php echo htmlspecialchars($user_email); ?>">
+			  </div>
+              <div class="form-group">
 				 <input type="password" name="old"  class="form-control my-input" id="oldpassword" placeholder="Old Password">
 			  </div>
 			  <div class="form-group">
@@ -41,7 +49,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 				 <input type="password" name="confirmnew" id="confirmnewpassword"  class="form-control my-input" placeholder="Confirm New Password">
 			  </div>
 			  <div class="text-center ">
-				 <button type="submit" class="btn btn-primary profile-button">Save Password</button>
+				 <button type="submit" name="passwordchange" class="btn btn-primary profile-button">Save Password</button>
 			  </div>
 		   </form>
 		</div>
