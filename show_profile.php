@@ -22,8 +22,8 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     require_once 'back_end/db-pizza.php';
     require_once 'back_end/db-topping.php';
     $email = $_SESSION['email'];
+    echo $email;
     $user = getUser($email);
-    //$user['country']= "country";
     print_r($user);
 
     
@@ -56,7 +56,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="D-113, right avenue block, CA,USA"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" value="<?php echo htmlspecialchars($user["country"]); ?>" placeholder="country"></div>
+                    <div class="col-md-6"><input type="text" name="country" class="form-control" value="<?php echo htmlspecialchars($user["country"]); ?>" placeholder="country"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="Bank Name" value="Bank of America"></div>

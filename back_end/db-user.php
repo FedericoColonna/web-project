@@ -9,7 +9,7 @@
             mysqli_stmt_bind_result($stmt, $id, $first_name, $last_name, $hashed_password, $country);
             mysqli_stmt_fetch($stmt);
                     
-            return compact('id', 'email', 'first_name', 'last_name', 'hashed_password', 'country');
+            return compact('id', 'first_name', 'last_name', 'hashed_password', 'country', 'email');
         } else {
             return -1;
         }
@@ -17,8 +17,8 @@
 
     function updateUser($id, $email, $firstname, $lastname, $country) {
         GLOBAL $conn;
-        if ($stmt = mysqli_prepare($conn, "UPDATE user SET first_name = ?, last_name = ?, email = ?, country = ? WHERE id = ?;")) {
-            mysqli_stmt_bind_param($stmt, "ssssi", $firstname, $lastname, $email, $country, $id);
+        if ($stmt = mysqli_prepare($conn, "UPDATE user SET country = ?, first_name = ?, last_name = ?, email = ? WHERE id = ?;")) {
+            mysqli_stmt_bind_param($stmt, "ssssi", $country, $firstname, $lastname, $email, $id);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
                     
