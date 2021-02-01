@@ -35,7 +35,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     <div class="row">
         <div class="col-md-4 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90">
-            <span class="font-weight-bold">John Doe</span><span>john_doe12@bbb.com</span><span>United States</span><span><button type="button" onclick="location.href='change_password_page.php';">Change Password</button></span></div>
+            <span class="font-weight-bold">John Doe</span><span>john_doe12@bbb.com</span><span>United States</span><span><button type="button" class="btn btn-primary profile-button" onclick="location.href='change_password_page.php';">Change Password</button></span></div>
         </div>
         <div class="col-md-8">
             <form action="/back_end/update_profile.php" method="POST">

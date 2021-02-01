@@ -23,9 +23,11 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <?php
 require_once 'back_end/db-pizza.php';
 require_once 'back_end/db-topping.php';
+require_once 'back_end/db-pizza_topping_search.php';
 
     if(isset($_SESSION['userid'])){
         echo "Welcome to the restricted area";
+        echo '<br>';
     }
     else{
         header("location: loginpage.php");
@@ -47,9 +49,23 @@ require_once 'back_end/db-topping.php';
 
     
 
-
-
 ?>
+
+<div>
+    <form method="post" action="/back_end/db-pizza_topping_search.php">
+    <h1>SEARCH FOR PIZZAS</h1>
+    <input type="text" name="search">
+    <button type="submit" class="btn btn-primary profile-button" value="Search">Search</button>
+    </form>
+    <div>
+    
+    
+    </div>
+</div>
+
+
+
+
 
 </body>
 </html>
