@@ -11,7 +11,7 @@ session_start();
     print '<div id="mydiv2" class="topnav">';
     print '<a '.(($currentPage === "Home") ? ' class="active" ': '').' href="index.php">Home</a>';
     if(isset($_SESSION["userid"])) {
-        print '<a '.(($currentPage === "Reserved") ? ' class="active" ': '').' href="reserved.php">Reserved</a>';
+        print '<a '.(($currentPage === "Reserved") ? ' class="active" ': '').' href="reservedpage.php">Reserved</a>';
         print '<a '.(($currentPage === "Profile") ? ' class="active" ': '').' href="show_profile.php">Profile</a>';
         print '<a '.(($currentPage === "Logout") ? ' class="active" ': '').' href="logout.php">Logout</a>';
         
