@@ -123,6 +123,17 @@ p {
 
 .myform {
     padding: 0 25px 0 33px;
+    color: black;
+    background-color: rgb(90, 117, 134);
+    border-radius: 10px;
+
+}
+.myform:focus {
+    background-color: rgb(90, 117, 134);
+    color:white;
+    font-weight: bold;
+    border-color: rgb(245, 221, 83);
+    border-bottom: 5px solid rgb(245, 221, 83);
 }
 
 .form-control {
@@ -248,7 +259,14 @@ small {
         width: 50%;
     }
 }
-/*SIGN UP STYLE*/
+/* STYLE*/
+#search-input{
+    display: inline-block;
+
+
+
+
+}
 
 #mydiv{
     margin-top: 40px;
@@ -276,3 +294,29 @@ small {
 
 }
 
+table {
+    font-family: arial, sans-serif;
+   
+    width: 100%;
+  }
+  
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-family: cursive;
+  }
+  th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    font-weight: bold;
+    padding: 8px;
+    background-color: rgb(63, 62, 58);
+    color:rgb(245, 221, 83);
+
+
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgb(90, 117, 134);
+  }
