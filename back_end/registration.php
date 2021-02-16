@@ -11,25 +11,25 @@
         
     
         if (emptySignup($firstname, $lastname, $email, $password, $confirm) !== false) {
-            header("Location: ../signuppage.php?error=emptyinput");
+            header("Location: ../signup_page.php?error=emptyinput");
             exit();
         } if (containsOnlyLetter($firstname) !== false) {
-            header("Location: ../signuppage.php?error=invalidfirstname");
+            header("Location: ../signup_page.php?error=invalidfirstname");
             exit();
         } if (containsOnlyLetter($lastname) !== false) {
-            header("Location: ../signuppage.php?error=invalidlastname");
+            header("Location: ../signup_page.php?error=invalidlastname");
             exit();
         } if (containsOnlyLetter($country) !== false) {
-            header("Location: ../signuppage.php?error=invalidCountry");
+            header("Location: ../signup_page.php?error=invalidCountry");
             exit();
         } if (invalidEmail($email) !== false) {
-            header("Location: ../signuppage.php?error=invalidemail");
+            header("Location: ../signup_page.php?error=invalidemail");
             exit();
         } if (passwordMatch($password, $confirm) !== false) {
-            header("Location: ../signuppage.php?error=pwdwrongmatch");
+            header("Location: ../signup_page.php?error=pwdwrongmatch");
             exit();
         } if (emailExists($email) !== false) {
-            header("Location: ../signuppage.php?error=stmtfailed");
+            header("Location: ../signup_page.php?error=stmtfailed");
             exit();
         } if(emptyOptionalField($country)) {
             $country = "country";
@@ -37,12 +37,12 @@
 
     }
     else {
-        header("Location: ../signuppage.php");
+        header("Location: ../signup_page.php");
     }
     if (createUser($email, password_hash($password, PASSWORD_DEFAULT), $firstname, $lastname, $country) == -1) {
-        header("Location: ../signuppage.php?error=stmtfailed");
+        header("Location: ../signup_page.php?error=stmtfailed");
     } else {
-        header("Location: ../signuppage.php?error=none");
+        header("Location: ../signup_page.php?error=none");
     }
     
     function emptySignup($firstname, $lastname, $email, $password, $confirm) {

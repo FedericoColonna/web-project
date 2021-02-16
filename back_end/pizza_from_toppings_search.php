@@ -11,16 +11,8 @@
         foreach ($topping_names as $topping_name) {
             $topping = getTopping($topping_name);
             $pizza_topping_ids = getPizzaToppingIds($topping["id"]);
-
-            //$pizza_ids = getPizzIdsFromPizzaToppingIds($pizza_topping_ids)
             $pizza_ids = array_map('extract_pizza_id', $pizza_topping_ids);
-            // $pizza_ids = [];
-            // foreach ($pizza_topping_ids as $pizza_topping_id) {
-            //     $pizza_id = $pizza_topping_id["pizza_id"];
-            //     array_push($pizza_ids, $pizza_id);
-            // }
-            //pizza_ids having the specific topping
-
+          
             if (empty($pizza_ids_to_return)) {
                 $pizza_ids_to_return = $pizza_ids;
             } else {
