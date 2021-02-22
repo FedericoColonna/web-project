@@ -122,9 +122,9 @@ p {
 }
 
 .myform {
-    padding: 0 25px 0 33px;
+   
     color: black;
-    background-color: rgb(90, 117, 134);
+    background-color: black;
     border-radius: 10px;
 
 }
@@ -320,3 +320,14 @@ table {
   tr:nth-child(even) {
     background-color: rgb(90, 117, 134);
   }
+
+  a {
+    color: rgb(245, 221, 83);
+  }
+  a:hover {
+    color: rgb(252, 252, 252);
+  }
+  h1,h7{
+    color: rgb(245, 221, 83);
+  }
+

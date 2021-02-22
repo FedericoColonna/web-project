@@ -16,9 +16,17 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <body>
 
 
-<link rel="stylesheet" type="text/css" href="signupstyle.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <?php $currentPage = 'Reserved'; ?>
 <?php include'commons/navbar.php'; ?>
+<?php require_once 'back_end/toppings.php'; ?>
+<?php
+function checkbox_topping_name ($topping_name) {
+return <<<HTML
+    <input id="mycheckbox" type="checkbox" name="topping_names[]" value ="{$topping_name}" />{$topping_name}
+HTML;
+}
+?>
 
 
 
@@ -41,11 +49,13 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                                 echo '<th>N°</th>';
                                 echo '<th>PIZZA</th>';
                                 echo '<th>PRICE</th>';
+                                echo '<th>ADD TO CART</th>';
                             echo '</tr>';
                             echo '<tr>';
                                 echo '<td>'.$pizza["id"];'</td>';
                                 echo '<td>'.$pizza["name"];'</td>';
                                 echo '<td>'.$pizza["price"];'</td>';
+                                echo '<td><button class="btn btn-primary profile-button" type="button">Add</button></td>';
                             echo '</tr>';
                         echo '</table>';
                         echo '<br>';
@@ -57,13 +67,17 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     <div>
         <form method="post" action="/back_end/pizza_from_toppings_search.php">
             <h1>SEARCH FOR PIZZAS FROM TOPPINGS</h1>
-            <input type="text" class="form-control" name="topping_name1">
-            <select name="topping_names[]" multiple>
-                <option value="mozzarella">mozzarella</option>
-                <option value="pomodoro">pomodoro</option>
-                <option value="stracchino">stracchino</option>
-                <option value="gorgonzola">gorgonzola</option>
-            </select>
+            <?php 
+                $toppings = get_toppings();
+                foreach($toppings as $topping) {
+                    $topping_name = $topping['name'];
+                    //echo '<input id="mycheckbox" type="checkbox" name="topping_names[]" value = "'.$topping_name.'" />'.$topping['name'];
+                    echo checkbox_topping_name($topping_name);
+                    echo '<br>';
+                   
+                   }
+                   
+                   ?> 
             <button type="submit" class="btn btn-primary profile-button" value="Search">Search</button>
         </form>
         <div class="container rounded profilediv mt-5">
@@ -75,12 +89,14 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                             echo '<th>N°</th>';
                             echo '<th>PIZZA</th>';
                             echo '<th>PRICE</th>';
+                            echo '<th>ADD TO CART</th>';
                         echo '</tr>';
                     foreach($pizzas as $pizza) {
                         echo '<tr>';
                             echo '<td>'.$pizza["id"];'</td>';
                             echo '<td>'.$pizza["name"];'</td>';
                             echo '<td>'.$pizza["price"];'</td>';
+                            echo '<td><button class="btn btn-primary profile-button" type="button">Add</button></td>';
                         echo '</tr>';
                     }
                     echo '</table>';

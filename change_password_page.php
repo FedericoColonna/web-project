@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="signupstyle.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
 <title>Change Password</title>
@@ -25,16 +25,16 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
   <div class="col-md-6 mx-auto text-center">
 	 <div class="header-title">
 		<h1 class="wv-heading--title">
-		   Change your Password
+		   Change your Password:
 		</h1>
 		<h7 class="wv-heading--subtitle">
 		   First insert your old password, then type the new one you have chosen.
 		</h7>
 	 </div>
   </div>
-  <div class="row">
+  <div>
 	 <div class="col-md-4 mx-auto">
-		<div class="myform form ">
+		<div class="myform form">
 		   <form action="/back_end/change_password.php" method="POST">
 			  <div class="form-group">
 				 <input readonly="readonly" type="email" name="email2"  class="form-control my-input" id="email2" placeholder="Email" value="<?php echo htmlspecialchars($user_email); ?>">

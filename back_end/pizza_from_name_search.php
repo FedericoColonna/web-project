@@ -7,7 +7,7 @@
         $pizza = getPizza($pizza_name);
 
         $_SESSION['pizza'] = $pizza;
-        header("Location: ../reservedpage.php?error=none");
+        header("Location: ../reserved_page.php?error=none");
     } else{
-        header("Location: ../reservedpage.php");
+        header("Location: ../reserved_page.php");
     }

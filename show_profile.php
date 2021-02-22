@@ -23,7 +23,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     require_once 'back_end/db-topping.php';
     $email = $_SESSION['email'];
     echo $email;
-    $user = getUser($email);
+    $user = getUser($email);    
     print_r($user);
 
     
@@ -42,7 +42,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
-                        <h6>Back to home</h6>
+                        <h6><a href="index.php">Back to home<a></h6>
                     </div>
                     <h6 class="text-right">Edit your profile:</h6>
                 </div>

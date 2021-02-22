@@ -23,9 +23,9 @@
             $_SESSION['pizzas'] = getPizzas($pizza_ids_to_return);
         }
        
-        header("Location: ../reservedpage.php?error=none");
+        header("Location: ../reserved_page.php?error=none");
     } else{
-        header("Location: ../reservedpage.php");
+        header("Location: ../reserved_page.php");
     }
 
     function extract_pizza_id($pizza_topping_id) {
