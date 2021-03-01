@@ -19,7 +19,14 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 
 <link rel="stylesheet" type="text/css" href="styles.css">
 <?php $currentPage = 'Reserved'; ?>
-<?php include'commons/navbar.php'; ?>
+<?php 
+    include'commons/navbar.php';
+    if (!isset($_SESSION['userid'])) {
+            header("Location: logout.php");
+            exit;
+}
+?>
+
 <?php require_once 'back_end/toppings.php'; ?>
 <?php
 function checkbox_topping_name($topping_name) {
@@ -29,7 +36,17 @@ HTML;
 }
 ?>
 
-
+<div id="cart-container">
+    <div id="cart-header" class="container rounded profilediv mt-5">
+        <h1>Cart</h1>
+    </div>
+    <div id="cart2" class="container rounded profilediv mt-5"> 
+    </div>
+    <div id="cart-buttons" class="container rounded profilediv mt-5">
+        <button id="clear-cart" class="btn btn-danger">Clear</button> 
+    </div>
+</div>
+ 
 
 <div class="container rounded profilediv mt-5">
     <div id="search">
@@ -46,6 +63,8 @@ HTML;
             ?> 
             </select>
             <button type="submit" class="btn btn-primary profile-button" value="Search">Search</button>
+           
+    
         </form>
     </div>
     <div class="container rounded profilediv mt-5">
@@ -66,6 +85,7 @@ HTML;
                     echo '<td>'.$pizza["price"].'</td>';
                     echo '<td>';
                     echo '<button ';
+                    echo ' onclick="change();"';
                     echo ' class="btn btn-primary profile-button add-to-cart" ';
                     echo ' data-name="'.$pizza["name"].'" ';
                     echo ' type="button">';
@@ -92,18 +112,20 @@ HTML;
         displayCart();
     });
 
-
     var displayCart = function() {
         console.log("displayCart");
         cart = shoppingCart.getCart();
-
-        $("#cart").html(JSON.stringify(cart));
-        
+        $("#cart2").html(JSON.stringify(cart));
+      
     }
+
+    $("#clear-cart").click(function(event){
+                shoppingCart.clearCart();
+                displayCart();
+    });
 
     displayCart();
 </script>
-
 
 </body>
 </html>

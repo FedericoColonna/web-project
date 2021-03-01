@@ -15,7 +15,13 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 
 
 <?php $currentPage = 'Profile'; ?>
-<?php include'commons/navbar.php';?>
+<?php 
+    include'commons/navbar.php';
+    if (!isset($_SESSION['userid'])) {
+            header("Location: logout.php");
+            exit;
+}
+?>
 
 <?php 
     require_once 'back_end/db-user.php';

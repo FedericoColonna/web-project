@@ -53,11 +53,14 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     if (isset($_GET["error"])) {
 
         if($_GET["error"] == "emptyinput"){
-            echo "<p>Fill in all fields!</p>";
+            echo '<div id="error-box">';
+            echo '<h5>Fill in all fields!</h5>';
+            echo '</div>';
         }
         else if ($_GET["error"] == "wronglogin") {
-            echo "<p>Incorrect login information!</p>";
-
+            echo '<div id="error-box">';
+            echo '<h5>Incorrect login information!</h5>';
+            echo '</div>';
         }
         
 }

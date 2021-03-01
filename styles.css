@@ -149,7 +149,7 @@ p {
 .loginfield{
     position: relative;
     display: block;
-    margin : 0 auto;
+    margin : 10px auto;
     color: black;
     background-color: rgb(90, 117, 134);
     width: auto;
@@ -263,8 +263,10 @@ small {
 #search-input{
     display: inline-block;
 
-
-
+}
+#search{
+    padding-top: 60px;
+    padding-bottom: 60px;
 
 }
 
@@ -281,6 +283,51 @@ small {
     color:  rgb(245, 221, 83);
 
 }
+
+#cart-container{
+
+    visibility: hidden;
+
+}
+#cart-header{
+
+    position:fixed;
+    right: 50px; top: 245px;
+    width: 300px;
+    height: 50px;
+    z-index: 10;
+
+}
+#cart2{
+
+    position:fixed;
+    right: 50px; top: 300px;
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+
+}
+#cart-buttons{
+
+    position:fixed;
+    right: 50px; top: 600px;
+    width: 300px;
+    height: 40px;
+    z-index: 10;
+
+}
+#error-box{
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 300px;
+    
+    margin: auto;
+    position: relative;
+
+}
+
 
 .label{
 
@@ -327,7 +374,7 @@ table {
   a:hover {
     color: rgb(252, 252, 252);
   }
-  h1,h7{
+  h1,h5,h7{
     color: rgb(245, 221, 83);
   }
 

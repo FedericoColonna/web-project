@@ -43,6 +43,11 @@ var shoppingCart = (function() {
         }
     };
 
+    obj.clearCart = function () {
+        cart = [];
+        persistCart();
+    };
+
     obj.getCart = function() {
         console.log("getCart");
         console.log("cart: " + JSON.stringify(cart));
@@ -54,3 +59,8 @@ var shoppingCart = (function() {
 
     return obj;
 })();
+
+function change(){
+
+    document.getElementById("cart-container").style.visibility="visible";
+}
