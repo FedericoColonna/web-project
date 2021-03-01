@@ -19,6 +19,21 @@
         }
     }
 
+    function getAllPizzas() {
+        GLOBAL $conn;
+        if ($stmt = mysqli_prepare($conn, "SELECT id, name, price FROM pizza")) {
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $id, $name, $price);
+            $ret = [];
+            while (mysqli_stmt_fetch($stmt)) {
+                array_push($ret, compact('id', 'name', 'price'));
+            }
+            return $ret;
+        } else {
+            return -1;
+        }
+    }
+
     function getPizza($pizza_name) {
         GLOBAL $conn;
         if ($stmt = mysqli_prepare($conn, "SELECT id, name, price  FROM pizza WHERE name LIKE ?")) {
