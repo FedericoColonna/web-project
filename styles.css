@@ -269,6 +269,20 @@ small {
     padding-bottom: 60px;
 
 }
+.search-bar{
+    width: 600px;
+    background-color: white;
+    height: 39px;
+    border-left: 6px solid rgb(245, 221, 83);
+    border-radius: 10px;
+}
+.search-bar:focus{
+    background-color: rgb(90, 117, 134);
+    color:white;
+    font-weight: bold;
+    border-color: rgb(245, 221, 83);
+    border-bottom: 5px solid rgb(245, 221, 83);
+}
 
 #mydiv{
     margin-top: 40px;

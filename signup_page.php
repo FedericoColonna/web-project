@@ -29,28 +29,33 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                 <form id="myform" action="/back_end/registration.php" method="POST">
                     <div class="form-group">
                         <label class="label" for="firstname">First name:</label><br>
-                        <input class="form-control"type="text" id="firstname" name="firstname"><br>
+                        <input class="form-control"type="text" id="firstname" name="firstname" required><br>
                     </div>  
                     <div class="form-group">
                         <label class="label" for="lastname">Last name:</label><br>
-                        <input class="form-control" type="text" id="lastname" name="lastname"><br>
+                        <input class="form-control" type="text" id="lastname" name="lastname" required><br>
                     </div>    
                     <div class="form-group">    
                         <label class="label" for="email">Email:</label><br>
-                        <input class="form-control" type="email" id="email" name="email"><br>
+                        <input class="form-control" type="email" id="email" name="email" required><br>
                     </div>    
                     <div class="form-group">  
                         <label class="label" for="pass">Password:</label><br>
-                        <input class="form-control" type="password" id="pass" name="pass"><br>
+                        <input class="form-control" type="password" id="pass" name="pass" required><br>
                     </div>
                     <div class="form-group">  
                         <label class="label" for="password">Confirm Password:</label><br>
-                        <input class="form-control" type="password" id="confirm" name="confirm"><br><br>
+                        <input class="form-control" type="password" id="confirm" name="confirm" required><br><br>
                     </div>
                     <div class="form-group">
                         <label class="label" for="country">Country (optional):</label><br>
                         <input class="form-control" type="text" id="country" name="country"><br>
-                    </div>    
+                    </div>
+                    <div class="form-group">
+                        <label class="label" for="phone_number">Phone Number (optional):</label><br>
+                        <input class="form-control" type="tel" id="phone_number" pattern="[0-9]{10}" name="phone_number"><br>
+                        <small>Format: 0123456789</small><br><br>
+                    </div>      
                     <div class="form-group">      
                         <input type="submit" class="btn btn-success" value="Submit" name="submit">
                     </div>

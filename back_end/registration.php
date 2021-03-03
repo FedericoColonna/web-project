@@ -8,6 +8,7 @@
         $password = trim($_POST['pass']);
         $confirm= trim($_POST['confirm']);
         $country= trim($_POST['country']);
+        $phone_number= trim($_POST['phone_number']);
         
     
         if (emptySignup($firstname, $lastname, $email, $password, $confirm) !== false) {
@@ -39,7 +40,7 @@
     else {
         header("Location: ../signup_page.php");
     }
-    if (createUser($email, password_hash($password, PASSWORD_DEFAULT), $firstname, $lastname, $country) == -1) {
+    if (createUser($email, password_hash($password, PASSWORD_DEFAULT), $firstname, $lastname, $country, $phone_number) == -1) {
         header("Location: ../signup_page.php?error=stmtfailed");
     } else {
         header("Location: ../signup_page.php?error=none");

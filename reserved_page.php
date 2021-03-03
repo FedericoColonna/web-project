@@ -24,7 +24,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     if (!isset($_SESSION['userid'])) {
             header("Location: logout.php");
             exit;
-}
+    }
 ?>
 
 <?php require_once 'back_end/toppings.php'; ?>
@@ -47,26 +47,26 @@ HTML;
     </div>
 </div>
  
-
 <div class="container rounded profilediv mt-5">
-    <div id="search">
-        <form method="post" action="/back_end/pizza_search.php">
-            <h1>SEARCH</h1>
-            <input type="text" class="myform" name="pizza_name">
-            <select class="selectpicker" name="topping_names[]" multiple data-live-search="true">
-            <?php 
-                $toppings = get_toppings();
-                foreach($toppings as $topping) {
-                    $topping_name = $topping['name'];
-                    echo checkbox_topping_name($topping_name);
-                }
-            ?> 
-            </select>
-            <button type="submit" class="btn btn-primary profile-button" value="Search">Search</button>
-           
+    <div class="input-group">
+            <div id="search">
+                <form method="post" action="/back_end/pizza_search.php">
+                    <h1>PIZZA SEARCH:</h1>
+                    <input type="text" class="search-bar" placeholder="Type a pizza's name" name="pizza_name">
+                    <select class="selectpicker" name="topping_names[]" multiple data-live-search="true">
+                    <?php 
+                        $toppings = get_toppings();
+                        foreach($toppings as $topping) {
+                            $topping_name = $topping['name'];
+                            echo checkbox_topping_name($topping_name);
+                        }
+                    ?> 
+                    </select>
+                    <button type="submit" class="btn btn-primary profile-button" value="Search">Search</button>
+                </form>
+            </div>
+    </div>    
     
-        </form>
-    </div>
     <div class="container rounded profilediv mt-5">
         <?php
         if (isset($_SESSION['pizzas'])) {

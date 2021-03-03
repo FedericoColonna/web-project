@@ -29,7 +29,10 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     require_once 'back_end/db-topping.php';
     $email = $_SESSION['email'];
     echo $email;
-    $user = getUser($email);    
+    $user = getUser($email);  
+    echo '<br>'; 
+    echo $user['phone_number']; 
+    echo '<br>'; 
     print_r($user);
 
     
@@ -58,7 +61,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo htmlspecialchars($user["email"]); ?>"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" value="+19685969668" placeholder="Phone number"></div>
+                    <div class="col-md-6"><input type="text" name="phone_number" class="form-control" value="<?php echo htmlspecialchars($user["phone_number"]); ?>" placeholder="Phone number"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="D-113, right avenue block, CA,USA"></div>
