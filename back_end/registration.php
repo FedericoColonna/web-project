@@ -9,6 +9,9 @@
         $confirm= trim($_POST['confirm']);
         $country= trim($_POST['country']);
         $phone_number= trim($_POST['phone_number']);
+        $address = ($_POST['address']);
+        $zipcode = trim($_POST['zipcode']);
+        $nickname = trim($_POST['nickname']);
         
     
         if (emptySignup($firstname, $lastname, $email, $password, $confirm) !== false) {
@@ -34,13 +37,17 @@
             exit();
         } if(emptyOptionalField($country)) {
             $country = "country";
-        }
+        } if(emptyOptionalField($address)) {
+            $address = "address";
+        } if(emptyOptionalField($nickname)) {
+            $nickname = "nickname";
+        }       
 
     }
     else {
         header("Location: ../signup_page.php");
     }
-    if (createUser($email, password_hash($password, PASSWORD_DEFAULT), $firstname, $lastname, $country, $phone_number) == -1) {
+    if (createUser($email, password_hash($password, PASSWORD_DEFAULT), $firstname, $lastname, $country, $address, $nickname, $phone_number, $zipcode) == -1) {
         header("Location: ../signup_page.php?error=stmtfailed");
     } else {
         header("Location: ../signup_page.php?error=none");
@@ -55,9 +62,12 @@
         }
         return $result;
     }
-    function emptyOptionalField($country) {
-        if(empty($country)){
+    function emptyOptionalField($value) {
+        if(empty($value)){
             $result = true;
+        }
+        else {
+            $result = false;
         }
         return $result;
     }

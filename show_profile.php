@@ -44,14 +44,17 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     <div class="row">
         <div class="col-md-4 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90">
-            <span class="font-weight-bold">John Doe</span><span>john_doe12@bbb.com</span><span>United States</span><span><button type="button" class="btn btn-primary profile-button" onclick="location.href='change_password_page.php';">Change Password</button></span></div>
+            <span class="font-weight-bold"><?php echo htmlspecialchars($user["first_name"]);echo'&nbsp';echo htmlspecialchars($user["last_name"]); ?></span>
+            <span><?php echo htmlspecialchars($user["email"]); ?></span>
+            <span><?php echo htmlspecialchars($user["country"]); ?></span><span>
+            <button type="button" class="btn btn-primary profile-button" onclick="location.href='change_password_page.php';">Change Password</button></span></div>
         </div>
         <div class="col-md-8">
             <form action="/back_end/update_profile.php" method="POST">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
-                        <h6><a href="index.php">Back to home<a></h6>
+                        <h6><a href="index.php">Back to Home<--<a></h6>
                     </div>
                     <h6 class="text-right">Edit your profile:</h6>
                 </div>
@@ -64,12 +67,12 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                     <div class="col-md-6"><input type="text" name="phone_number" class="form-control" value="<?php echo htmlspecialchars($user["phone_number"]); ?>" placeholder="Phone number"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="D-113, right avenue block, CA,USA"></div>
+                    <div class="col-md-6"><input type="text" name="address" class="form-control" placeholder="address" value="<?php echo htmlspecialchars($user["address"]); ?>"></div>
                     <div class="col-md-6"><input type="text" name="country" class="form-control" value="<?php echo htmlspecialchars($user["country"]); ?>" placeholder="country"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Bank Name" value="Bank of America"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" value="043958409584095" placeholder="Account Number"></div>
+                    <div class="col-md-6"><input type="text" name="nickname" class="form-control" placeholder="Nickname" value="<?php echo htmlspecialchars($user["nickname"]); ?>"></div>
+                    <div class="col-md-6"><input type="text" name="zipcode" class="form-control" value="<?php echo htmlspecialchars($user["zipcode"]); ?>" placeholder="Zip Code"></div>
                 </div>
                 <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name="update" type="submit">Save Profile</button></div>
             </form>

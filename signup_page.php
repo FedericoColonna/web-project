@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,6 +55,18 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                         <input class="form-control" type="tel" id="phone_number" pattern="[0-9]{10}" name="phone_number"><br>
                         <small>Format: 0123456789</small><br><br>
                     </div>      
+                    <div class="form-group">
+                        <label class="label" for="address">Address (optional):</label><br>
+                        <input class="form-control" type="text" id="address" name="address"><br>
+                    </div>
+                    <div class="form-group">
+                        <label class="label" for="zipcode">Zipcode (optional):</label><br>
+                        <input class="form-control" type="text" id="address" name="zipcode"><br>
+                    </div>
+                    <div class="form-group">
+                        <label class="label" for="nickname">Nickname (optional):</label><br>
+                        <input class="form-control" type="text" id="address" name="nickname"><br>
+                    </div>
                     <div class="form-group">      
                         <input type="submit" class="btn btn-success" value="Submit" name="submit">
                     </div>
@@ -70,30 +81,33 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     if (isset($_GET["error"])) {
 
         if($_GET["error"] == "emptyinput"){
-            echo "<p>Fill in all required fields!</p>";
+            echo '<p class="warning">Fill in all required fields!</p>';
         }
         else if ($_GET["error"] == "invalidfirstname") {
-            echo "<p>Use only letters for your first name!</p>";
+            echo '<p class="warning">Use only letters for your first name!</p>';
 
         }
         else if ($_GET["error"] == "invalidlastname") {
-            echo "<p>Use only letters for your last name!</p>";
+            echo '<p class="warning">Use only letters for your last name!</p>';
 
         }
         else if ($_GET["error"] == "invalidemail") {
-            echo "<p>Choose a valid email!</p>";
+            echo '<p class="warning">Choose a valid email!</p>';
         }
         else if ($_GET["error"] == "pwdwrongmatch") {
-            echo "<p>The passwords do not match!</p>";
+            echo '<p class="warning">The passwords do not match!</p>';
         }
         else if ($_GET["error"] == "emailalreadyregistered") {
-            echo "<p>Email already registered!</p>";
+            echo '<p class="warning">Email already registered!</p>';
         }
         else if ($_GET["error"] == "stmtfailed") {
-            echo "<p>Something went wrong sing up again!</p>";
+            echo '<p class="warning">Something went wrong sing up again!</p>';
         }
         else if ($_GET["error"] == "none") {
-            echo "<p>You have signed up!</p>";
+            echo '<p class="warning">You have signed up!</p>';
+            
+            
+
         }
 }
 ?>

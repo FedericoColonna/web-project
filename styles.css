@@ -1,7 +1,7 @@
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  background-color: black;
   overflow: hidden;
 }
 
@@ -75,7 +75,7 @@ body{
 .card {
     border-radius: 30px;
     border-top: 5px solid rgb(245, 221, 83);
-    background:  #191919;
+    background:  black;
     color:  rgb(245, 221, 83);
     width: 300px;
 }
@@ -287,7 +287,7 @@ small {
 #mydiv{
     margin-top: 40px;
     width: 700px;
-    background-color: #191919;
+    background-color: black;
     padding-top: 60px;
     padding-bottom: 60px;
 
@@ -341,6 +341,11 @@ small {
     position: relative;
 
 }
+.warning{
+    position: fixed;
+    right: 50px; top: 245px;
+    color: rgb(245, 221, 83);
+}
 
 
 .label{
@@ -350,7 +355,7 @@ small {
 }
 .profilediv{
 
-    background-color: #191919;
+    background-color: black;
     color: white;
 
 }
