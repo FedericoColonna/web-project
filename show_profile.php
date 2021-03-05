@@ -12,8 +12,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-
 <?php $currentPage = 'Profile'; ?>
 <?php 
     include'commons/navbar.php';
@@ -22,7 +20,6 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
             exit;
 }
 ?>
-
 <?php 
     require_once 'back_end/db-user.php';
     require_once 'back_end/db-pizza.php';
@@ -34,12 +31,9 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     echo $user['phone_number']; 
     echo '<br>'; 
     print_r($user);
-
-    
 ?>
 </head>
 <body>
-
 <div class="container rounded profilediv mt-5">
     <div class="row">
         <div class="col-md-4 border-right">
@@ -80,6 +74,5 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
         </div>
     </div>
 </div>
-
 </body>
 </html>

@@ -16,6 +16,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 
 <?php $currentPage = 'SignUp'; ?>
 <?php include'commons/navbar.php';?>
+
 </head>
 <body>
 <div id= "mydiv" class="container">
@@ -68,7 +69,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                         <input class="form-control" type="text" id="address" name="nickname"><br>
                     </div>
                     <div class="form-group">      
-                        <input type="submit" class="btn btn-success" value="Submit" name="submit">
+                        <input type="submit" id="input-submit" class="btn btn-success" value="Submit" name="submit">
                     </div>
                 </form>    
             </div>
@@ -106,9 +107,11 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
         else if ($_GET["error"] == "none") {
             echo '<p class="warning">You have signed up!</p>';
             
-            
-
+        } 
+        else if($_GET["error"] == "invalidCountry") {
+            echo '<p class="warning">Use only letters for your country name!</p>';
         }
+        
 }
 ?>
 </div>
