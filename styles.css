@@ -295,7 +295,7 @@ small {
 #mydiv h1{
 
     color:  rgb(245, 221, 83);
-
+    
 }
 
 #cart-container{
@@ -386,6 +386,9 @@ table {
   tr:nth-child(even) {
     background-color: rgb(90, 117, 134);
   }
+  tr:hover {
+      background-color: rgb(197, 168, 4);
+    }
 
   a {
     color: rgb(245, 221, 83);

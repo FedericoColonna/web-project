@@ -1,10 +1,10 @@
 <?php 
-    
+    session_start();
     require_once 'db-connection.php';
     require_once 'db-user.php';
     if (isset($_POST['passwordchange'])) {
-
-        $user_email= trim($_POST['email2']);
+        
+        $user_email= $_SESSION['email'];
         $old_password = trim($_POST['old']);
         $new_password = trim($_POST['new']);
         $confirm_new_password = trim($_POST['confirmnew']);

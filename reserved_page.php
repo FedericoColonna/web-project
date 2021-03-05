@@ -43,6 +43,7 @@ HTML;
     <div id="cart2" class="container rounded profilediv mt-5"> 
     </div>
     <div id="cart-buttons" class="container rounded profilediv mt-5">
+        <button onclick="endedTransaction();" class="btn btn-success">Pay</button> 
         <button id="clear-cart" class="btn btn-danger">Clear</button> 
     </div>
 </div>
@@ -122,6 +123,7 @@ HTML;
     $("#clear-cart").click(function(event){
                 shoppingCart.clearCart();
                 displayCart();
+                document.getElementById("cart-container").style.visibility="hidden";
     });
 
     displayCart();

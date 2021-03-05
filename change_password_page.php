@@ -37,7 +37,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 		<div class="myform form">
 		   <form action="/back_end/change_password.php" method="POST">
 			  <div class="form-group">
-				 <input readonly="readonly" type="email" name="email2"  class="form-control my-input" id="email2" placeholder="Email" value="<?php echo htmlspecialchars($user_email); ?>">
+				 <input type="email" name="email2"  class="form-control my-input" id="email2" placeholder="Email" value="<?php echo htmlspecialchars($user_email); ?>" readonly>
 			  </div>
               <div class="form-group">
 				 <input type="password" name="old"  class="form-control my-input" id="oldpassword" placeholder="Old Password">
