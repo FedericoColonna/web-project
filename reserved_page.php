@@ -40,7 +40,18 @@ HTML;
     <div id="cart-header" class="container rounded profilediv mt-5">
         <h1>Cart</h1>
     </div>
-    <div id="cart2" class="container rounded profilediv mt-5"> 
+    <div id="cart2" class="container rounded profilediv mt-5">
+        <table>
+        <tr>
+                <th>name</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>total</th>
+            </tr>
+        </table>
+        <div>
+            Total: <span id='total-cart'>0</span>€
+        </div>
     </div>
     <div id="cart-buttons" class="container rounded profilediv mt-5">
         <button onclick="endedTransaction();" class="btn btn-success">Pay</button> 
@@ -82,13 +93,14 @@ HTML;
             foreach($pizzas as $pizza) {
                 echo '<tr>';
                     echo '<td>'.$pizza["id"].'</td>';
-                    echo '<td>'.$pizza["name"].'</td>';
+                    echo '<td>'.$pizza["name"].'<br>'.$pizza["toppings"].'</td>';
                     echo '<td>'.$pizza["price"].'</td>';
                     echo '<td>';
                     echo '<button ';
                     echo ' onclick="change();"';
                     echo ' class="btn btn-primary profile-button add-to-cart" ';
                     echo ' data-name="'.$pizza["name"].'" ';
+                    echo ' data-price="'.$pizza["price"].'" ';
                     echo ' type="button">';
                     echo 'Add';
                     echo '</button>';
@@ -109,24 +121,49 @@ HTML;
 <script>
     $("#search-result").on("click", ".add-to-cart", function(event){
         var name = $(this).attr("data-name");
-        shoppingCart.addToCart(name, 1);
+        var price = $(this).attr("data-price");
+        shoppingCart.addToCart(name, 1, price);
         displayCart();
     });
+
+    var appendCartElement = function(element) {
+        var price = element["price"];
+        var quantity = element["quantity"];
+        $("#cart2 > table").append(
+            $("<tr data-name='" + element["name"] + "'>"
+            + "<td>" + element["name"] + "</td>"
+            + "<td>" + price + "€</td>"
+            + "<td>" + quantity + "</td>"
+            + "<td>" + price*quantity + "€</td>"
+            + "</tr>")
+        );
+;
+    }
 
     var displayCart = function() {
         console.log("displayCart");
         cart = shoppingCart.getCart();
-        $("#cart2").html(JSON.stringify(cart));
-      
+        //$("#cart2").html(JSON.stringify(cart));
+        var total = 0;
+        cart.forEach(cartElement => {
+            console.log("cart element: " + JSON.stringify(cartElement));
+            $("tr[data-name='" + cartElement["name"] + "']").remove();
+            appendCartElement(cartElement);
+            total += cartElement["quantity"] * cartElement["price"];
+        });
+        $("#total-cart").text(total);
     }
 
     $("#clear-cart").click(function(event){
-                shoppingCart.clearCart();
-                displayCart();
-                document.getElementById("cart-container").style.visibility="hidden";
+        shoppingCart.clearCart();
+        displayCart();
+        $("tr[data-name").remove();
+        $("#total-cart").text(0);
+        document.getElementById("cart-container").style.visibility="hidden";
     });
 
     displayCart();
+    
 </script>
 
 </body>

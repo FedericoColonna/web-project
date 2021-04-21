@@ -16,7 +16,7 @@ var shoppingCart = (function() {
 
     //private methods/properties
     var obj = {};
-    obj.addToCart = function(name, quantity) {
+    obj.addToCart = function(name, quantity, price) {
         console.log("addToCart");
 
         for (cartItem of cart) {
@@ -27,7 +27,7 @@ var shoppingCart = (function() {
             }
         }
 
-        var itemToAdd = {"name": name, "quantity": quantity}
+        var itemToAdd = {"name": name, "quantity": quantity, "price" : price}
         cart.push(itemToAdd);
         persistCart();
     };
@@ -70,7 +70,3 @@ function endedTransaction(){
     alert("PAYMENT SUCCESSFUL!\nPizzas are on the way!");
 
 }
-
-    
- 
-
