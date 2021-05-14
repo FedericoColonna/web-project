@@ -98,9 +98,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
         else if ($_GET["error"] == "pwdwrongmatch") {
             echo '<p class="warning">The passwords do not match!</p>';
         }
-        else if ($_GET["error"] == "emailalreadyregistered") {
-            echo '<p class="warning">Email already registered!</p>';
-        }
+        
         else if ($_GET["error"] == "stmtfailed") {
             echo '<p class="warning">Something went wrong sing up again!</p>';
         }

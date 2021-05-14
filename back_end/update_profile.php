@@ -13,7 +13,22 @@
         $nickname = trim($_POST['nickname']);
         $user = getUser($current_email);
 
-        if (updateUser($user["id"], $maybe_new_email, $firstname, $lastname, $country, $address, $nickname, $phone_number, $zipcode) == 0) {
+        if (emptyUpdate($firstname,$lastname, $maybe_new_email)!== false) {
+            header("Location: ../show_profile.php?error=emptyinput");
+            exit();  
+        } if (containsOnlyLetter($firstname) !== false) {
+            header("Location: ../show_profile.php?error=invalidfirstname");
+            exit();
+        } if (containsOnlyLetter($lastname) !== false) {
+            header("Location: ../show_profile.php?error=invalidlastname");
+            exit();
+        } if (containsOnlyLetter($country) !== false) {
+            header("Location: ../show_profile.php?error=invalidCountry");
+            exit();
+        } if (invalidEmail($maybe_new_email) !== false) {
+            header("Location: ../show_profile.php?error=invalidemail");
+            exit();        
+        } if (updateUser($user["id"], $maybe_new_email, $firstname, $lastname, $country, $address, $nickname, $phone_number, $zipcode) == 0) {
             $_SESSION['email'] = $maybe_new_email;
             header("Location: ../show_profile.php?error=none2");
         } else {
@@ -21,4 +36,31 @@
         }
     } else{
         header("Location: ../show_profile.php");
+    }
+
+
+
+    function emptyUpdate($firstname, $lastname, $maybe_new_email) {
+        if (empty($maybe_new_email) || empty($firstname) || empty($lastname)){
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+        return $result;
+    }
+   
+    function containsOnlyLetter($value) {
+        if(!preg_match("/^[a-zA-Z]*$/", $value)) {
+            return true;
+        }
+        return false;
+    }
+
+    function invalidEmail($email){
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return true;
+        }
+        return false;
+
     }

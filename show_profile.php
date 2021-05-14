@@ -73,6 +73,31 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
             </div>
         </div>
     </div>
+    <?php
+
+    if (isset($_GET["error"])) {
+
+        if($_GET["error"] == "emptyinput"){
+            echo '<p class="warning">Fill in all required fields!</p>';
+        }
+        else if ($_GET["error"] == "invalidfirstname") {
+            echo '<p class="warning">Use only letters for your first name!</p>';
+
+        }
+        else if ($_GET["error"] == "invalidlastname") {
+            echo '<p class="warning">Use only letters for your last name!</p>';
+
+        }
+        else if ($_GET["error"] == "invalidemail") {
+            echo '<p class="warning">Choose a valid email!</p>';
+        }
+        
+        else if($_GET["error"] == "invalidCountry") {
+            echo '<p class="warning">Use only letters for your country name!</p>';
+        }
+        
+    }
+    ?>  
 </div>
 </body>
 </html>

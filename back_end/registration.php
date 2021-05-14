@@ -41,9 +41,14 @@
             $address = "address";
         } if(emptyOptionalField($nickname)) {
             $nickname = "nickname";
-        }       
-
-    }
+        } if(emptyOptionalField($zipcode)) {
+            $zipcode = "11111";
+        } if(emptyOptionalField($phone_number)) {
+            $phone_number = "0123456789";
+        }
+    }    
+        
+          
     else {
         header("Location: ../signup_page.php");
     }
