@@ -29,7 +29,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                 <form id="myform" action="/back_end/registration.php" method="POST">
                     <div class="form-group">
                         <label class="label" for="firstname">First name:</label><br>
-                        <input class="form-control"type="text" id="firstname" name="firstname" required><br>
+                        <input class="form-control" type="text" id="firstname" name="firstname" required><br>
                     </div>  
                     <div class="form-group">
                         <label class="label" for="lastname">Last name:</label><br>
@@ -44,7 +44,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                         <input class="form-control" type="password" id="pass" name="pass" required><br>
                     </div>
                     <div class="form-group">  
-                        <label class="label" for="password">Confirm Password:</label><br>
+                        <label class="label" for="confirm">Confirm Password:</label><br>
                         <input class="form-control" type="password" id="confirm" name="confirm" required><br><br>
                     </div>
                     <div class="form-group">
@@ -62,11 +62,11 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                     </div>
                     <div class="form-group">
                         <label class="label" for="zipcode">Zipcode (optional):</label><br>
-                        <input class="form-control" type="text" id="address" name="zipcode"><br>
+                        <input class="form-control" type="text" id="zipcode" name="zipcode"><br>
                     </div>
                     <div class="form-group">
                         <label class="label" for="nickname">Nickname (optional):</label><br>
-                        <input class="form-control" type="text" id="address" name="nickname"><br>
+                        <input class="form-control" type="text" id="nickname" name="nickname"><br>
                     </div>
                     <div class="form-group">      
                         <input type="submit" id="input-submit" class="btn btn-success" value="Submit" name="submit">
@@ -77,6 +77,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
         </div>
     </div>
 </div>
+
 <?php
 
     if (isset($_GET["error"])) {
@@ -112,6 +113,6 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
         
 }
 ?>
-</div>
+
 </body>
 </html>

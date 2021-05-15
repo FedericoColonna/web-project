@@ -65,7 +65,7 @@ function change(){
     document.getElementById("cart-container").style.visibility="visible";
 }
 function endedTransaction(){
-    
+    shoppingCart.clearCart();
     document.getElementById("cart-container").style.visibility="hidden";
     alert("PAYMENT SUCCESSFUL!\nPizzas are on the way!");
 
