@@ -19,10 +19,10 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <body>
     
     <div class="jumbotron jumbotron-fluid">
-    <img src="imgs/bee.jpeg" alt="bee logo">
+    <img src="imgs/BeeLogo4.png" alt="bee logo" width="300" height="200">
     <div class="container">
         
-        <h1>Welcome to Bees' Pizza</h1>      
+        <h1>Welcome to LuckyBee's Pizza</h1>      
         <p>You can bet we're busy!</p>
     </div>
     </div>

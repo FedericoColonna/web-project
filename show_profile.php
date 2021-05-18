@@ -37,7 +37,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <div class="container rounded profilediv mt-5">
     <div class="row">
         <div class="col-md-4 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="imgs/Bee3.jpg" width="90">
             <span class="font-weight-bold"><?php echo htmlspecialchars($user["first_name"]);echo'&nbsp';echo htmlspecialchars($user["last_name"]); ?></span>
             <span><?php echo htmlspecialchars($user["email"]); ?></span>
             <span><?php echo htmlspecialchars($user["country"]); ?></span><span>

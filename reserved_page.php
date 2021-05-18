@@ -42,7 +42,7 @@ HTML;
     </div>
     <div id="cart2" class="container rounded profilediv mt-5">
         <table>
-        <tr>
+            <tr>
                 <th>name</th>
                 <th>price</th>
                 <th>quantity</th>

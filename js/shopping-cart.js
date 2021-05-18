@@ -66,6 +66,8 @@ function change(){
 }
 function endedTransaction(){
     shoppingCart.clearCart();
+    $("tr[data-name").remove();
+    $("#total-cart").text(0);
     document.getElementById("cart-container").style.visibility="hidden";
     alert("PAYMENT SUCCESSFUL!\nPizzas are on the way!");
 
