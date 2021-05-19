@@ -1,4 +1,20 @@
-
+@font-face {
+    font-family: 'VeganStylePersonalUse-5Y58';
+    src: url('fonts/VeganStylePersonalUse-5Y58.eot');
+    src: url('fonts/VeganStylePersonalUse-5Y58.eot?#iefix') format('embedded-opentype'),
+         url('fonts/VeganStylePersonalUse-5Y58.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'VeganStylePersonalUse';
+    src: url('fonts/VeganStylePersonalUse.svg#VeganStylePersonalUse') format('svg'),
+         url('fonts/VeganStylePersonalUse.ttf') format('truetype'),
+         url('fonts/VeganStylePersonalUse.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: black;
@@ -33,6 +49,23 @@
 
 
 }
+
+#banner{
+
+    font-family: 'VeganStylePersonalUse-5Y58';
+    font-family: 'VeganStylePersonalUse';
+    color: rgb(241, 203, 33);
+    font-size: 70px;
+}
+
+#first-header{
+    float: right;
+
+}
+#oven2{
+    float: left;
+}
+
 
 .profile-button {
     background: rgb(245, 221, 83);
@@ -86,9 +119,11 @@ body{
 }
 
 
+
 p {
     font-weight: 600;
     font-size: 30px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .fab {
