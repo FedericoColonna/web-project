@@ -15,16 +15,16 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 
 <?php $currentPage = 'Home'; ?>
 <?php include'commons/navbar.php';?> 
+
 </head>
 <body>
     
     <div class="jumbotron jumbotron-fluid">
-    <img src="imgs/BeeLogo4.png" alt="bee logo" width="300" height="200">
-    <img src="imgs/Pizza-forno-a-legna.jpg" alt="oven" width="600" height="300">
+        <img src="imgs/BeeLogo4.png" alt="bee logo" width="300" height="200">
+        <img src="imgs/Pizza-forno-a-legna.jpg" alt="oven" width="600" height="300">
     <div class="container">
-        
         <h1 id="banner">Welcome to Lucky Bee's Pizza</h1>      
-        <p>You can bet we're busy!</p>
+        <h2>You can bet we're busy!</h2>
     </div>
     </div>
     <div class="container">
@@ -33,36 +33,35 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                 <img id="oven2" src="imgs/pizzeria-forno-a-legna.jpg" alt="pizza in oven" width="500" height="300">
             </div>
             <div class="col-md-6 col-sm-6">
-                <p>Some text heree</p>
                 <h1>WHO are we?:</h1>      
-                <p>Some text here </p>
+                <p>We're the best pizza place in town, come visit us in our pizzeria or 
+                <a href="signup_page.php">SIGN UP</a> to get your order delivered home, either way you won't be disappointed buzz ;)</p>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">        
+    <div id="cont2" class="container">
+        <div class="row">      
+            <div class="col-md-6 col-sm-6 text-right">
+                <img id="farmers" src="imgs/farmers.jpeg" alt="farmers" width="500" height="300">
+            </div>  
             <div class="col-md-6 col-sm-6 ">
-                <p>Some text heree</p>
                 <h1>WHY are we the best?:</h1>      
-                <p>Some text here </p>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <img id="oven2" src="imgs/farmers.jpeg" alt="farmers" width="500" height="300">
+                <p>For our pizzas we only use fresh produce ingredients, coming straight out of the farms of our trusted local farmers. </p>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div id="cont3" class="container">
         <div class="row">        
             <div class="col-md-6 col-sm-6 text-right">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93645.49128007505!2d-106.39491936801414!3d42.821707319264405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87609365c85e7a63%3A0x69cefc3917343e53!2sCasper%2C%20Wyoming%2C%20Stati%20Uniti!5e0!3m2!1sit!2sit!4v1621334286998!5m2!1sit!2sit" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <img id="town" src="imgs/casper.jpeg" alt="farmers" width="500" height="300">
             </div>
             <div class="col-md-6 col-sm-6">
-                <p>Some text heree</p>
                 <h1>WHERE are we?:</h1>      
-                <p>Some text here </p>
+                <p>We are located in <a href="aboutus_page.php">CASPER</a>, a beautiful town of our gorgeous State: Wyoming.</p>
             </div>
         </div>
     </div>
     
+    <?php include'commons/footer.php';?>
 </body>
 </html>

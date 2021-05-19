@@ -49,6 +49,26 @@
 
 
 }
+.footer {
+    margin-top: 300px;
+    margin-bottom: 30px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+  .space {
+    margin-top: 1000px;
+  }
+  .brightness {
+    background-color: #2f3031;
+    display: inline-block;
+
+}
+.brightness img:hover {
+    opacity: .3;
+}
 
 #banner{
 
@@ -62,9 +82,13 @@
     float: right;
 
 }
-#oven2{
-    float: left;
+#cont2{
+    margin-top: 100px;
 }
+#cont3{
+    margin-top: 100px;
+}
+
 
 
 .profile-button {
@@ -101,9 +125,6 @@
 
 
 
-/*LOGIN STYLE*/
-
-
 body{
 
     background-color: #2f3031;
@@ -120,10 +141,15 @@ body{
 
 
 
-p {
+h2 {
     font-weight: 600;
     font-size: 30px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+p {
+    font-size: 20px;
+    color: white;
+
 }
 
 .fab {

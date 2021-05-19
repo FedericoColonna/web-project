@@ -60,9 +60,9 @@
             }
         }
 
-        header("Location: ../reserved_page.php?error=none");
+        header("Location: ../pizzas_page.php?error=none");
     } else{
-        header("Location: ../reserved_page.php");
+        header("Location: ../pizzas_page.php");
     }
 
     function extract_pizza_id($pizza_topping_id) {
