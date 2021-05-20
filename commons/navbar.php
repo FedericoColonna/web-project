@@ -14,7 +14,6 @@
         print '<a '.(($currentPage === "Pizzas") ? ' class="active" ': '').' href="pizzas_page.php">Pizzas</a>';
         print '<a '.(($currentPage === "Profile") ? ' class="active" ': '').' href="show_profile.php">Profile</a>';
         print '<a '.(($currentPage === "Logout") ? ' class="active" ': '').' href="logout.php">Logout</a>';
-        print '<a '.(($currentPage === "Cart") ? ' class="active" ': '').' href="cart_page.php">Cart</a>';
         
     } else {
         print '<a '.(($currentPage === "SignUp") ? ' class="active" ': '').' href="signup_page.php">SignUp</a>';

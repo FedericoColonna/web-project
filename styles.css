@@ -70,7 +70,7 @@
     opacity: .3;
 }
 
-#banner{
+#banner {
 
     font-family: 'VeganStylePersonalUse-5Y58';
     font-family: 'VeganStylePersonalUse';
@@ -78,14 +78,10 @@
     font-size: 70px;
 }
 
-#first-header{
-    float: right;
-
-}
-#cont2{
+#cont2 {
     margin-top: 100px;
 }
-#cont3{
+#cont3 {
     margin-top: 100px;
 }
 

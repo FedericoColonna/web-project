@@ -3,8 +3,6 @@
     session_start();
     session_unset();
     session_destroy();
-    
-    //header("Location: index.php");
 ?>
 <div class="container rounded profilediv mt-5">
     <h1>You've been logged out!</h1>

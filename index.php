@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
 <title>Homepage</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -32,7 +36,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
             <div class="col-md-6 col-sm-6 text-right">
                 <img id="oven2" src="imgs/pizzeria-forno-a-legna.jpg" alt="pizza in oven" width="500" height="300">
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div  class="col-md-6 col-sm-6">
                 <h1>WHO are we?:</h1>      
                 <p>We're the best pizza place in town, come visit us in our pizzeria or 
                 <a href="signup_page.php">SIGN UP</a> to get your order delivered home, either way you won't be disappointed buzz ;)</p>
