@@ -22,9 +22,8 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     if (!isset($_SESSION['userid'])) {
             header("Location: logout.php");
             exit;
-}
-?>
-<?php 
+    }
+
     require_once 'back_end/db-user.php';
     require_once 'back_end/db-pizza.php';
     require_once 'back_end/db-topping.php';
@@ -48,7 +47,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
             <button type="button" class="btn btn-primary profile-button" onclick="location.href='change_password_page.php';">Change Password</button></span></div>
         </div>
         <div class="col-md-8">
-            <form action="/back_end/update_profile.php" method="POST">
+            <form action="/update_profile.php" method="POST">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>

@@ -16,8 +16,8 @@
         print '<a '.(($currentPage === "Logout") ? ' class="active" ': '').' href="logout.php">Logout</a>';
         
     } else {
-        print '<a '.(($currentPage === "SignUp") ? ' class="active" ': '').' href="signup_page.php">SignUp</a>';
-        print '<a '.(($currentPage === "Login") ? ' class="active" ': '').' href="login_page.php">LogIn</a>';
+        print '<a '.(($currentPage === "SignUp") ? ' class="active" ': '').' href="registration.php">SignUp</a>';
+        print '<a '.(($currentPage === "Login") ? ' class="active" ': '').' href="login.php">LogIn</a>';
         print '<a '.(($currentPage === "AboutUs") ? ' class="active" ': '').' href="aboutus_page.php">AboutUs</a>';
     }
 

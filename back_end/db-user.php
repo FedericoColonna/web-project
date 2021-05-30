@@ -15,10 +15,10 @@
         }
     }
 
-    function updateUser($id, $email, $firstname, $lastname, $country, $address, $nickname, $phone_number, $zipcode) {
+    function updateUser($user) {
         GLOBAL $conn;
         if ($stmt = mysqli_prepare($conn, "UPDATE user SET email = ?, first_name = ?, last_name = ?, country = ?, address = ?, nickname = ?, phone_number = ?, zipcode = ? WHERE id = ?;")) {
-            mysqli_stmt_bind_param($stmt, "ssssssiii", $email, $firstname, $lastname, $country, $address, $nickname, $phone_number, $zipcode, $id);
+            mysqli_stmt_bind_param($stmt, "ssssssiii", $user["email"], $user["firstname"], $user["lastname"], $user["country"], $user["address"], $user["nickname"], $user["phone_number"], $user["zipcode"], $user["id"]);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
                     
@@ -28,10 +28,11 @@
         }
     } 
 
-    function createUser($email, $hashed_password, $firstname, $lastname, $country, $address, $nickname, $phone_number, $zipcode) {
+    //$email, $hashed_password, $firstname, $lastname, $country, $address, $nickname, $phone_number, $zipcode
+    function createUser($user) {
         GLOBAL $conn;
         if ($stmt = mysqli_prepare($conn, "INSERT INTO user (email, hashed_password, first_name, last_name, country, address, nickname, phone_number, zipcode) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);")) {
-            mysqli_stmt_bind_param($stmt, "sssssssii", $email, $hashed_password, $firstname, $lastname, $country, $address, $nickname, $phone_number, $zipcode);
+            mysqli_stmt_bind_param($stmt, "sssssssii", $user["email"], $user["hashed_password"], $user["firstname"], $user["lastname"], $user["country"], $user["address"], $user["nickname"], $user["phone_number"], $user["zipcode"]);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
                     

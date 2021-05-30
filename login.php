@@ -1,3 +1,45 @@
+<?php   
+    function emptyLogin($email, $password){
+        if (empty($email) || empty($password)) {
+            return true;
+        }
+        return false;
+    }
+
+    if (isset($_POST['submit'])) {
+        require_once 'back_end/db-user.php';
+
+        $email = $_POST['email'];
+        $password = $_POST['pass'];
+
+        if (emptyLogin($email, $password)) {
+            header("Location: /login.php?error=emptyinput");
+            exit();
+        }
+        $user = getUser($email);
+        if (is_null($user["id"])) {
+            header("Location: /login.php?error=wronglogin2");
+            exit();
+        }
+
+        $hashed_password = $user["hashed_password"];
+        $password_correct = password_verify($password, $hashed_password);
+        
+        if ($password_correct === false) {
+            header("Location: /login.php?error=wronglogin3");
+            exit();
+        }
+        session_start();
+        $_SESSION["userid"] = $user["id"];
+        $_SESSION["email"] = $email;
+
+    
+        header("Location: /show_profile.php");
+        exit();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +59,10 @@
 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 <?php $currentPage = 'Login'; ?>
-<?php include'commons/navbar.php';?>
+<?php include'commons/navbar.php'; ?>
+  
+    
+
 </head>
 <body>
 
@@ -34,7 +79,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                         </div>
                     </div>
                 </div>
-                <form action="/back_end/login.php" method="POST">
+                <form action="/login.php" method="POST">
                     <div> <input class="loginfield" type="email" id="email" name="email" placeholder="Email"> </div>
                     <div> <input class="loginfield" type="password" id="pass" name="pass" placeholder="Password"> </div>
                     <div class="row">
@@ -44,7 +89,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                     
                     </div>
                     <div class="form-group mt-3">
-                        <button type="submit" name="login" class="btn btn-block btn-lg"><i>Login</i></button>
+                        <button type="submit" name="submit" class="btn btn-block btn-lg"><i>Login</i></button>
                     </div>
                 </form>
             </div>

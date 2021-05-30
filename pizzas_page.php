@@ -147,7 +147,6 @@ HTML;
     var displayCart = function() {
         console.log("displayCart");
         cart = shoppingCart.getCart();
-        //$("#cart2").html(JSON.stringify(cart));
         var total = 0;
         cart.forEach(cartElement => {
             console.log("cart element: " + JSON.stringify(cartElement));

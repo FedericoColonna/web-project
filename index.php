@@ -39,7 +39,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
             <div  class="col-md-6 col-sm-6">
                 <h1>WHO are we?:</h1>      
                 <p>We're the best pizza place in town, come visit us in our pizzeria or 
-                <a href="signup_page.php">SIGN UP</a> to get your order delivered home, either way you won't be disappointed buzz ;)</p>
+                <a href="registration.php">SIGN UP</a> to get your order delivered home, either way you won't be disappointed buzz ;)</p>
             </div>
         </div>
     </div>

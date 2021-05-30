@@ -6,5 +6,5 @@
 ?>
 <div class="container rounded profilediv mt-5">
     <h1>You've been logged out!</h1>
-    <h3>Go back <a href="index.php">HOME</a> or <a href="login_page.php">LogIn</a> again.</h3>
+    <h3>Go back <a href="index.php">HOME</a> or <a href="login.php">LogIn</a> again.</h3>
 </div>
