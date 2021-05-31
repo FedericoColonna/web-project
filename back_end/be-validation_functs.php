@@ -45,3 +45,10 @@ function emailAlreadyRegistered($email){
     return false;
 }
 
+function emptyUpdate($user) {
+    if (empty($user["email"]) || empty($user["firstname"]) || empty($user["lastname"])){
+        return true;
+    }
+    return false;
+}
+
