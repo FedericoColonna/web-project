@@ -7,11 +7,11 @@
         $user_updated["firstname"] = trim($_POST['firstname']);
         $user_updated["lastname"] = trim($_POST['lastname']);
         $user_updated["email"] = trim($_POST['email']);
-        $user_updated["country"] = isset($_POST['country']) ? trim($_POST['country']) : "country";
-        $user_updated["phone_number"] = isset($_POST['phone_number']) ? trim($_POST['phone_number']) : "123456789";
-        $user_updated["address"] = isset($_POST['address']) ? trim($_POST['address']) : "address";
-        $user_updated["zipcode"] = isset($_POST['zipcode']) ? trim($_POST['zipcode']) : "1234";
-        $user_updated["nickname"] = isset($_POST['nickname']) ? trim($_POST['nickname']) : "nickname";
+        $user_updated["country"] = isset($_POST['country']) ? trim($_POST['country']) : NULL;
+        $user_updated["phone_number"] = isset($_POST['phone_number']) ? trim($_POST['phone_number']) : NULL;
+        $user_updated["address"] = isset($_POST['address']) ? trim($_POST['address']) : NULL;
+        $user_updated["zipcode"] = isset($_POST['zipcode']) ? trim($_POST['zipcode']) : NULL;
+        $user_updated["nickname"] = isset($_POST['nickname']) ? trim($_POST['nickname']) : NULL;
         
         $user = getUser($current_email);
         $user_updated["id"] = $user["id"];

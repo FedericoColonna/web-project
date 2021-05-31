@@ -28,12 +28,8 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     require_once 'back_end/db-pizza.php';
     require_once 'back_end/db-topping.php';
     $email = $_SESSION['email'];
-    echo $email;
     $user = getUser($email);  
-    echo '<br>'; 
-    echo $user['phone_number']; 
-    echo '<br>'; 
-    print_r($user);
+    
 ?>
 </head>
 <body>
@@ -71,7 +67,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                     <div class="col-md-6"><input type="text" name="nickname" class="form-control" placeholder="Nickname" value="<?php echo htmlspecialchars($user["nickname"]); ?>"></div>
                     <div class="col-md-6"><input type="text" name="zipcode" class="form-control" value="<?php echo htmlspecialchars($user["zipcode"]); ?>" placeholder="Zip Code"></div>
                 </div>
-                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name="update" type="submit">Save Profile</button></div>
+                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name="submit" type="submit">Save Profile</button></div>
             </form>
             </div>
         </div>
@@ -100,8 +96,9 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
         }
         
     }
-    ?>  
-</div>
-<?php include'commons/footer.php';?>
+    ?>
+    </div>  
+    <?php include 'commons/footer.php';?>
+
 </body>
 </html>

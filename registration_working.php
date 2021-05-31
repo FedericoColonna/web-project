@@ -1,10 +1,106 @@
 <?php
-    include_once 'back_end/be-validation_functs.php';
+
+function containsAllMandatoryFields($user) {
+    if (empty($user["email"]) || empty($user["password"]) || empty($user["firstname"]) || empty($user["lastname"]) || empty($user["confirm"])){
+        return false;
+    }
+    return true;
+}
+
+function emptyOptionalField($value) {
+    if(empty($value)){
+        return true;
+    }
+    return false;
+}
+
+function containsOnlyLetter($value) {
+    if(preg_match("/^[a-zA-Z]*$/", $value)) {
+        return true;
+    }
+    return false;
+}
+
+function isValidEmail($email){
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return true;
+    }
+    return false;
+  
+}
+   
+function passwordMatch($password, $password_to_check) {
+        if($password == $password_to_check) {
+            return true;
+        }
+        return false;
+    }
+
+function emailAlreadyRegistered($email){
+        $user = getUser($email);
+        if (!is_null($user["id"])) {
+            return true;
+        }
+        return false;
+    }
+
+
+
     
-    if(isset($_POST['submit'])) {
-        include_once 'back_end/be-registration.php'; 
-    }    
+if(isset($_POST['submit'])) {
+        require_once 'back_end/db-user.php';
+
+        $user["firstname"] = trim($_POST['firstname']);
+        $user["lastname"] = trim($_POST['lastname']);
+        $user["email"] = trim($_POST['email']);
+        $user["password"] = trim($_POST['pass']);
+        $user["confirm"] = trim($_POST['confirm']);
+        $user["country"] = isset($_POST['country']) ? trim($_POST['country']) : "country";
+        $user["phone_number"] = isset($_POST['phone_number']) ? trim($_POST['phone_number']) : "123456789";
+        $user["address"] = isset($_POST['address']) ? trim($_POST['address']) : "address";
+        $user["zipcode"] = isset($_POST['zipcode']) ? trim($_POST['zipcode']) : "1234";
+        $user["nickname"] = isset($_POST['nickname']) ? trim($_POST['nickname']) : "nickname";
+        
+    
+        if (!containsAllMandatoryFields($user)) {
+            header("Location: /registration.php?error=emptyinput");
+            exit();
+        } if (!containsOnlyLetter($user["firstname"])) {
+            header("Location: /registration.php?error=invalidfirstname");
+            exit();
+        } if (!containsOnlyLetter($user["lastname"])) {
+            header("Location: /registration.php?error=invalidlastname");
+            exit();
+        } if (!containsOnlyLetter($user["country"])) {
+            header("Location: /registration.php?error=invalidCountry");
+            exit();
+        } if (!isValidEmail($user["email"])) {
+            header("Location: /registration.php?error=invalidemail");
+            exit();
+        } if (!passwordMatch($user["password"], $user["confirm"])) {
+            header("Location: /registration.php?error=pwdwrongmatch");
+            exit();
+        } if (emailAlreadyRegistered($user["email"])) {
+            header("Location: /registration.php?error=stmtfailed");
+            exit();
+        }if (emptyOptionalField($user["country"])) {
+            $user["country"] = NULL;
+        }if (emptyOptionalField($user["phone_number"])) {
+            $user["phone_number"] = NULL;
+        }    
+        $user["hashed_password"] = password_hash($user["password"], PASSWORD_DEFAULT);
+          
+    if (createUser($user) == -1) {
+        header("Location: /registration.php?error=stmtfailed");
+    } else {
+        header("Location: /login.php?error=none");
+    }
+    
+    exit();
+}    
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,8 +218,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
         }
         
 }
-
-   include'commons/footer.php';
 ?>
+ <?php include'commons/footer.php';?>
 </body>
 </html>

@@ -17,7 +17,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <?php include'commons/navbar.php';?>
 <?php
     $user_email = $_SESSION['email'];
-    echo $user_email; ?>
+?>
 
 </head>
 <body>
@@ -28,7 +28,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 		   Change your Password:
 		</h1>
 		<h7 class="wv-heading--subtitle">
-		   First insert your old password, then type the new one you have chosen.
+		    Type the new password you have chosen and confirm it.
 		</h7>
 	 </div>
   </div>
