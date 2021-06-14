@@ -1,13 +1,18 @@
+<?php
+    if (isset($_POST['pizza_name'])) {
+        include_once '../application_files/back_end/be-pizza_search.php';
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">  
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
 <title>Pizzas</title> 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
@@ -24,14 +29,14 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <link rel="stylesheet" type="text/css" href="styles.css">
 <?php $currentPage = 'Pizzas'; ?>
 <?php 
-    include'commons/navbar.php';
+    include'../application_files/commons/navbar.php';
     if (!isset($_SESSION['userid'])) {
             header("Location: logout.php");
             exit;
     }
 ?>
 
-<?php require_once 'back_end/toppings.php'; ?>
+<?php require_once '../application_files/back_end/toppings.php'; ?>
 <?php
 function checkbox_topping_name($topping_name) {
 return <<<HTML
@@ -66,10 +71,10 @@ HTML;
 <div class="container rounded profilediv mt-5">
     <div class="input-group">
             <div id="search">
-                <form method="post" action="/back_end/pizza_search.php">
+                <form method="post" action="pizzas_page.php">
                     <h1>PIZZA SEARCH:</h1>
                     <input type="text" class="search-bar" placeholder="Type a pizza's name" name="pizza_name">
-                    <select class="selectpicker" name="topping_names[]" multiple data-live-search="true">
+                    <select class="selectpicker" name="topping_names[]" data-live-search="true" multiple>
                     <?php 
                         $toppings = get_toppings();
                         foreach($toppings as $topping) {
@@ -168,6 +173,6 @@ HTML;
     displayCart();
     
 </script>
-<?php include'commons/footer.php';?>
+<?php include'../application_files/commons/footer.php';?>
 </body>
 </html>

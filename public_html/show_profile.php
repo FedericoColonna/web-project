@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
 <title>Profile</title> 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -18,15 +18,15 @@
 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <?php $currentPage = 'Profile'; ?>
 <?php 
-    include'commons/navbar.php';
+    include'../application_files/commons/navbar.php';
     if (!isset($_SESSION['userid'])) {
             header("Location: logout.php");
             exit;
     }
 
-    require_once 'back_end/db-user.php';
-    require_once 'back_end/db-pizza.php';
-    require_once 'back_end/db-topping.php';
+    require_once '../application_files/back_end/db-user.php';
+    require_once '../application_files/back_end/db-pizza.php';
+    require_once '../application_files/back_end/db-topping.php';
     $email = $_SESSION['email'];
     $user = getUser($email);  
     
@@ -36,15 +36,15 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
 <div class="container rounded profilediv mt-5">
     <div class="row">
         <div class="col-md-4 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="imgs/Bee3.jpg" width="90">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="imgs/Bee3.jpg" alt="bee avatar" width="90">
             <span class="font-weight-bold"><?php echo htmlspecialchars($user["first_name"]);echo'&nbsp';echo htmlspecialchars($user["last_name"]); ?></span>
             <span><?php echo htmlspecialchars($user["email"]); ?></span>
             <span><?php echo htmlspecialchars($user["country"]); ?></span><span>
             <button type="button" class="btn btn-primary profile-button" onclick="location.href='change_password_page.php';">Change Password</button></span></div>
         </div>
         <div class="col-md-8">
-            <form action="/update_profile.php" method="POST">
-            <div class="p-3 py-5">
+            <form action="update_profile.php" method="POST">
+                <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
                         <h6><a href="index.php">Back to Home<--<a></h6>
@@ -98,7 +98,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
     }
     ?>
     </div>  
-    <?php include 'commons/footer.php';?>
+    <?php include '../application_files/commons/footer.php';?>
 
 </body>
 </html>

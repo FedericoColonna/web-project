@@ -7,8 +7,8 @@
     }
 
     if (isset($_POST['submit'])) {
-        require_once 'back_end/db-user.php';
-        include_once 'back_end/be-login.php';
+        require_once '../application_files/back_end/db-user.php';
+        include_once '../application_files/back_end/be-login.php';
     }
 ?>
 <!DOCTYPE html>
@@ -17,10 +17,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
 <title>Login</title>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -30,7 +30,7 @@
 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 <?php $currentPage = 'Login'; ?>
-<?php include'commons/navbar.php'; ?>
+<?php include'../application_files/commons/navbar.php'; ?>
 
 </head>
 <body>
@@ -48,7 +48,7 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
                         </div>
                     </div>
                 </div>
-                <form action="/login.php" method="POST">
+                <form action="login.php" method="POST">
                     <div> <input class="loginfield" type="email" id="email" name="email" placeholder="Email"> </div>
                     <div> <input class="loginfield" type="password" id="pass" name="pass" placeholder="Password"> </div>
                     <div class="row">

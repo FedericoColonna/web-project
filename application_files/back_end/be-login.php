@@ -4,12 +4,12 @@
     $password = $_POST['pass'];
 
     if (emptyLogin($email, $password)) {
-        header("Location: /login.php?error=emptyinput");
+        header("Location: login.php?error=emptyinput");
         exit();
     }
     $user = getUser($email);
     if (is_null($user["id"])) {
-        header("Location: /login.php?error=wronglogin2");
+        header("Location: login.php?error=wronglogin");
         exit();
     }
 
@@ -17,7 +17,7 @@
     $password_correct = password_verify($password, $hashed_password);
     
     if ($password_correct === false) {
-        header("Location: /login.php?error=wronglogin3");
+        header("Location: login.php?error=wronglogin");
         exit();
     }
     session_start();
@@ -25,6 +25,6 @@
     $_SESSION["email"] = $email;
 
 
-    header("Location: /show_profile.php");
+    header("Location: show_profile.php");
     exit();
         

@@ -1,5 +1,5 @@
 <?php
-    require_once 'back_end/db-user.php';
+    require_once 'db-user.php';
     $user["firstname"] = trim($_POST['firstname']);
     $user["lastname"] = trim($_POST['lastname']);
     $user["email"] = trim($_POST['email']);
@@ -13,33 +13,33 @@
     
 
     if (isInvalidEmail($user["email"])) {
-        header("Location: /registration.php?error=invalidemail");
+        header("Location: registration.php?error=invalidemail");
         exit();
     } if (doesNotContainAllMandatoryFields($user)) {
-        header("Location: /registration.php?error=emptyinput");
+        header("Location: registration.php?error=emptyinput");
         exit();
     } if (doesNotContainOnlyLetter($user["firstname"])) {
-        header("Location: /registration.php?error=invalidfirstname");
+        header("Location: registration.php?error=invalidfirstname");
         exit();
     } if (doesNotContainOnlyLetter($user["lastname"])) {
-        header("Location: /registration.php?error=invalidlastname");
+        header("Location: registration.php?error=invalidlastname");
         exit();
     } if (!is_null($user["country"]) && !doesNotContainOnlyLetter($user["country"])) {
-        header("Location: /registration.php?error=invalidCountry");
+        header("Location: registration.php?error=invalidCountry");
         exit();
     } if (passwordDoesNotMatch($user["password"], $user["confirm"])) {
-        header("Location: /registration.php?error=pwdwrongmatch");
+        header("Location: registration.php?error=pwdwrongmatch");
         exit();
     } if (emailAlreadyRegistered($user["email"])) {
-        header("Location: /registration.php?error=stmtfailed");
+        header("Location: registration.php?error=stmtfailed");
         exit();
     }
     
     $user["hashed_password"] = password_hash($user["password"], PASSWORD_DEFAULT);      
     if (createUser($user) == -1) {
-        header("Location: /registration.php?error=stmtfailed");
+        header("Location: registration.php?error=stmtfailed");
     } else {
-        header("Location: /login.php?error=none");
+        header("Location: login.php?error=none");
     }
     
     exit();

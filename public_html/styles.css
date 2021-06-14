@@ -19,6 +19,7 @@
 .topnav {
   background-color: black;
   overflow: hidden;
+  width: 100%;
 }
 
 /* Style the links inside the navigation bar */
@@ -436,7 +437,7 @@ table {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    font-family: cursive;
+    font-family: arial, sans-serif;
   }
   th{
     border: 1px solid #dddddd;
