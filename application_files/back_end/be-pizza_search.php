@@ -10,15 +10,13 @@
 
     $_SESSION['pizzas'] = [];
 
-    $pizza_ids_to_return = array_map(function($pizza){
-        return $pizza["id"];
-    }, getAllPizzas());
+    $pizza_ids_to_return = array_map('extract_pizza_id_from_pizza', getAllPizzas());
 
     $topping_names = $_POST['topping_names'];
     foreach ($topping_names as $topping_name) {
         $topping = getTopping($topping_name);
         $pizza_topping_ids = getPizzaToppingsByToppingId($topping["id"]);
-        $pizza_ids = array_map('extract_pizza_id', $pizza_topping_ids);
+        $pizza_ids = array_map('extract_pizza_id_from_pizza_topping', $pizza_topping_ids);
         
         if (empty($pizza_ids_to_return)) {
             $pizza_ids_to_return = $pizza_ids;
@@ -28,7 +26,6 @@
     }
     //pizza_ids_to_return contains only pizzas with all toppings in topping_names
     if (!empty($pizza_ids_to_return)) {
-        $pizza_name_to_search = $_POST['pizza_name'];
         $unfiltered_pizzas = getPizzas($pizza_ids_to_return);
 
         //1, 2, 3
@@ -51,6 +48,7 @@
             $unfiltered_pizzas[$i]['toppings'] = implode(',', $topping_names);
         }
         
+        $pizza_name_to_search = $_POST['pizza_name'];
         if (empty($pizza_name_to_search)) {
             $_SESSION['pizzas'] = $unfiltered_pizzas;
         } else {
@@ -60,10 +58,12 @@
         }
     }
 
-        header("Location: pizzas_page.php?error=none");
+    header("Location: pizzas_page.php?error=none");
     
-
-    function extract_pizza_id($pizza_topping_id) {
+    function extract_pizza_id_from_pizza($pizza){
+        return $pizza["id"];
+    }
+    function extract_pizza_id_from_pizza_topping($pizza_topping_id) {
         return $pizza_topping_id["pizza_id"];
     }
 
