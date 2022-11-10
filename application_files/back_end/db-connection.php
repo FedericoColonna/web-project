@@ -1,8 +1,8 @@
  <?php
-    $servername = "ftpupload.net";
-    $username = "epiz_32911410";
-    $password = "aKCPitIvkIZ";
-    $databasename = "epiz_32911410_pizza";
+    $servername = "";
+    $username = "";
+    $password = "";
+    $databasename = "";
 
     $conn = mysqli_connect($servername, $username, $password, $databasename);
 
